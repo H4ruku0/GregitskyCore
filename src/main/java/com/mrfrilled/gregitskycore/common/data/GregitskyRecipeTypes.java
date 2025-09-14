@@ -11,10 +11,14 @@ import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.register;
 
 public class GregitskyRecipeTypes {
 
-    public final static GTRecipeType GREENHOUSE_RECIPES = register("greenhouse", MULTIBLOCK)
+    public static GTRecipeType GREENHOUSE_RECIPES;
+
+    public static void init() {
+            GREENHOUSE_RECIPES = register("greenhouse", MULTIBLOCK)
             .setMaxIOSize(2, 1, 1, 1)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.BATH);
 
+    }
 }

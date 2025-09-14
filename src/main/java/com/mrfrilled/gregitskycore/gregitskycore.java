@@ -9,6 +9,8 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
+import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
+import com.mrfrilled.gregitskycore.common.machine.GreenHouse;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -22,18 +24,15 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes.GREENHOUSE_RECIPES;
-import static com.mrfrilled.gregitskycore.common.machine.GreenHouse.GREENHOUSE;
-
-@Mod(GregitskyCore.MOD_ID)
+@Mod(gregitskycore.MOD_ID)
 @SuppressWarnings("removal")
-public class GregitskyCore {
+public class gregitskycore {
 
     public static final String MOD_ID = "gregitskycore";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate REGISTRATE = GTRegistrate.create(GregitskyCore.MOD_ID);
+    public static GTRegistrate REGISTRATE = GTRegistrate.create(gregitskycore.MOD_ID);
 
-    public GregitskyCore() {
+    public gregitskycore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -84,7 +83,7 @@ public class GregitskyCore {
      * @param event
      */
     private void addMaterialRegistries(MaterialRegistryEvent event) {
-        GTCEuAPI.materialManager.createRegistry(GregitskyCore.MOD_ID);
+        GTCEuAPI.materialManager.createRegistry(gregitskycore.MOD_ID);
     }
 
     /**
@@ -113,8 +112,8 @@ public class GregitskyCore {
      * @param event
      */
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
-        // CustomRecipeTypes.init();GREENHOUSE_RECIPES
-
+        // CustomRecipeTypes.init();
+        GregitskyRecipeTypes.init();
     }
 
     /**
@@ -125,7 +124,7 @@ public class GregitskyCore {
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         // CustomMachines.init();
-
+        //GreenHouse.init();
     }
 
     /**

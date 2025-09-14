@@ -14,7 +14,7 @@ public class ExampleGTAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return GregitskyCore.REGISTRATE;
+        return gregitskycore.REGISTRATE;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class ExampleGTAddon implements IGTAddon {
 
     @Override
     public String addonModId() {
-        return GregitskyCore.MOD_ID;
+        return gregitskycore.MOD_ID;
     }
 
     @Override
