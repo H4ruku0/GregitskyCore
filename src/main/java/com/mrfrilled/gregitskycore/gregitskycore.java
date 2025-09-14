@@ -124,7 +124,7 @@ public class gregitskycore {
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         // CustomMachines.init();
-        //GreenHouse.init();
+        GreenHouse.init(); //Error in this line
     }
 
     /**

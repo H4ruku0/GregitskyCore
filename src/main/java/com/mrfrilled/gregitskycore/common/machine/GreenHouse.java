@@ -10,15 +10,17 @@ import com.gregtechceu.gtceu.common.data.GTBlocks;
 
 import net.minecraft.world.level.block.Blocks;
 
-import com.mrfrilled.gregitskycore.data.recipes.GREENHOUSE_RECIPES;
+
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 
+import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
+import static com.gregtechceu.gtceu.api.pattern.Predicates.controller;
 import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistration.REGISTRATE;
 
 
 public class GreenHouse {
 
-    public static final MultiblockMachineDefinition GREENHOUSE = REGISTRATE
+    public static MultiblockMachineDefinition GREENHOUSE = REGISTRATE
             .multiblock("greenhouse", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GregitskyRecipeTypes.GREENHOUSE_RECIPES)
@@ -27,24 +29,24 @@ public class GreenHouse {
                     .aisle("CCC", "CGC", "CGC", "CLC", "CCC")
                     .aisle("CMC", "GSG", "G#G", "LIL", "COC")
                     .aisle("CKC", "CGC", "CGC", "CLC", "CNC")
-                    .where('K', Predicates.controller(Predicates.blocks(definition.get())))
-                    .where('M', Predicates.blocks(Blocks.MOSS_BLOCK)
-                            .or(Predicates.blocks(Blocks.DIRT))
-                            .or(Predicates.blocks(Blocks.GRASS_BLOCK)))
-                    .where('G', Predicates.blocks(GTBlocks.CLEANROOM_GLASS.get()))
-                    .where('S', Predicates.blocks(Blocks.OAK_SAPLING)
-                            .or(Predicates.blocks(Blocks.DARK_OAK_SAPLING))
-                            .or(Predicates.blocks(Blocks.SPRUCE_SAPLING))
-                            .or(Predicates.blocks(Blocks.BIRCH_SAPLING))
-                            .or(Predicates.blocks(Blocks.JUNGLE_SAPLING))
-                            .or(Predicates.blocks(Blocks.ACACIA_SAPLING))
-                            .or(Predicates.blocks(Blocks.AZALEA))
-                            .or(Predicates.blocks(Blocks.FLOWERING_AZALEA))
-                            .or(Predicates.blocks(Blocks.MANGROVE_PROPAGULE))
-                            .or(Predicates.blocks(GTBlocks.RUBBER_SAPLING.get())))
-                    .where('I', Predicates.blocks(Blocks.GLOWSTONE))
-                    .where('L', Predicates.blocks(GTBlocks.CASING_GRATE.get()))
-                    .where('C', Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get())
+                    .where('K', controller(blocks(definition.getBlock())))
+                    .where('M', blocks(Blocks.MOSS_BLOCK)
+                            .or(blocks(Blocks.DIRT))
+                            .or(blocks(Blocks.GRASS_BLOCK)))
+                    .where('G', blocks(GTBlocks.CLEANROOM_GLASS.get()))
+                    .where('S', blocks(Blocks.OAK_SAPLING)
+                            .or(blocks(Blocks.DARK_OAK_SAPLING))
+                            .or(blocks(Blocks.SPRUCE_SAPLING))
+                            .or(blocks(Blocks.BIRCH_SAPLING))
+                            .or(blocks(Blocks.JUNGLE_SAPLING))
+                            .or(blocks(Blocks.ACACIA_SAPLING))
+                            .or(blocks(Blocks.AZALEA))
+                            .or(blocks(Blocks.FLOWERING_AZALEA))
+                            .or(blocks(Blocks.MANGROVE_PROPAGULE))
+                            .or(blocks(GTBlocks.RUBBER_SAPLING.get())))
+                    .where('I', blocks(Blocks.GLOWSTONE))
+                    .where('L', blocks(GTBlocks.CASING_GRATE.get()))
+                    .where('C', blocks(GTBlocks.CASING_STEEL_SOLID.get())
                             .or(Predicates.autoAbilities(definition.getRecipeTypes())))
                     .where('O', Predicates.abilities(PartAbility.MUFFLER)
                             .setExactLimit(1))
