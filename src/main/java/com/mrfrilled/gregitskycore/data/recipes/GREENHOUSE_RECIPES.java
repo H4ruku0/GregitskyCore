@@ -62,14 +62,7 @@ public class GREENHOUSE_RECIPES {
 
 
     private static void loadGreenhouseRecipes(Consumer<FinishedRecipe> provider) {
-        VanillaRecipeHelper.addShapedRecipe(provider, true, GTCEu.id("greenhouse"),
-                GreenHouse.GREENHOUSE.asStack(),
-                "AWA",
-                "ASA",
-                "WAW",
-                "A", CustomTags.MV_CIRCUITS,
-                "W", ChemicalHelper.get(TagPrefix.wireGtSingle, GTMaterials.Copper),
-                "S", GTBlocks.CASING_STEEL_SOLID.asItem());
+
 
         // Rubber
         greenhouseHelper(provider, "rubber_sapling", GTBlocks.RUBBER_SAPLING.asItem(),
@@ -165,6 +158,6 @@ public class GREENHOUSE_RECIPES {
         // Brown Mushroom
         greenhouseHelper(provider, "brown_mushroom", Items.BROWN_MUSHROOM, new ItemStack(Items.BROWN_MUSHROOM, 12), new ItemStack(Items.BROWN_MUSHROOM, 24));
     }
-    public static void init() {}
+    //public static void init() {}
 
 }

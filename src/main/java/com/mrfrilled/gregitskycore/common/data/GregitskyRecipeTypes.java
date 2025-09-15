@@ -15,7 +15,7 @@ public class GregitskyRecipeTypes {
 
     public static void init() {
             GREENHOUSE_RECIPES = register("greenhouse", MULTIBLOCK)
-            .setMaxIOSize(2, 1, 1, 1)
+            .setMaxIOSize(3, 3, 1, 1)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.BATH);
