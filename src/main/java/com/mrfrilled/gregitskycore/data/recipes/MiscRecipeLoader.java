@@ -1,18 +1,27 @@
 package com.mrfrilled.gregitskycore.data.recipes;
 
-import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
-import static com.mrfrilled.gregitskycore.common.machine.GreenHouse.GREENHOUSE;
+import static com.mrfrilled.gregitskycore.common.data.multiblocks.GreenHouse.GREENHOUSE;
+import static net.minecraft.world.item.Items.*;
 
-public class GTMultiMachines {
+public class MiscRecipeLoader {
+
+    public static void init(Consumer<FinishedRecipe> provider) {
+        GTMultiMachines_Recipes(provider);
+
+
+        //if (GTCEu.Mods.isAE2Loaded()) {
+        //    createAE2Recipes(provider);
+        //}
+    }
+
     private static void GTMultiMachines_Recipes(Consumer<FinishedRecipe> provider) {
 
         // LV
@@ -20,8 +29,8 @@ public class GTMultiMachines {
                 "C",
                 "P",
                 "P",
-                'C', new ItemStack(Blocks.SAND),
-                'P', new ItemStack(Items.IRON_INGOT));
+                'C', SAND,
+                'P', IRON_INGOT);
 
         //ASSEMBLER_RECIPES.recipeBuilder("battery_hull_lv")
         //        .inputItems(cableGtSingle, Tin)

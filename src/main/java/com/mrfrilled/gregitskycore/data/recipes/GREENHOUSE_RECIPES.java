@@ -8,7 +8,7 @@ import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
-import com.mrfrilled.gregitskycore.common.machine.GreenHouse;
+import com.mrfrilled.gregitskycore.common.data.multiblocks.GreenHouse;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -24,6 +24,15 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.Water;
 import static com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes.GREENHOUSE_RECIPES;
 
 public class GREENHOUSE_RECIPES {
+
+    public static void init(Consumer<FinishedRecipe> provider) {
+        loadGreenhouseRecipes(provider);
+
+
+        //if (GTCEu.Mods.isAE2Loaded()) {
+        //    createAE2Recipes(provider);
+        //}
+    }
 
     private static void greenhouseHelper(Consumer<FinishedRecipe> provider, String id, Item input, ItemStack output_normal, ItemStack output_boosted) {
         greenhouseHelper(provider, id, input, List.of(output_normal), List.of(output_boosted));

@@ -4,13 +4,15 @@ import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
+import com.mrfrilled.gregitskycore.data.recipes.GREENHOUSE_RECIPES;
+import com.mrfrilled.gregitskycore.common.data.recipe.GregitskyRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
 @SuppressWarnings("unused")
 @GTAddon
-public class ExampleGTAddon implements IGTAddon {
+public class GregitskyCoreGTAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
@@ -33,6 +35,8 @@ public class ExampleGTAddon implements IGTAddon {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         // CustomRecipes.init(provider);
+        GregitskyRecipes.init(provider);
+        //GREENHOUSE_RECIPES.init(provider);
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.

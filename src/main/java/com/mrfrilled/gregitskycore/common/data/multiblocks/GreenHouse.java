@@ -1,4 +1,4 @@
-package com.mrfrilled.gregitskycore.common.machine;
+package com.mrfrilled.gregitskycore.common.data.multiblocks;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -8,6 +8,8 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 
+import com.mrfrilled.gregitskycore.common.data.machine.GreenHousetest;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Blocks;
 
 
@@ -15,16 +17,18 @@ import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.controller;
-import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistration.REGISTRATE;
+import static com.gregtechceu.gtceu.common.data.GTBlocks.CASING_STEEL_SOLID;
+import static com.mrfrilled.gregitskycore.api.registries.GregitskyRegistration.REGISTRATE;
 
 
 public class GreenHouse {
 
-    public static MultiblockMachineDefinition GREENHOUSE = REGISTRATE
-            .multiblock("greenhouse", WorkableElectricMultiblockMachine::new)
+    public static final MultiblockMachineDefinition GREENHOUSE = REGISTRATE
+            .multiblock("greenhouse", GreenHousetest::new)
             .rotationState(RotationState.NON_Y_AXIS)
+            .tooltips(Component.translatable("gregitsky.multiblock.greenhouse_test.tooltip"))
             .recipeType(GregitskyRecipeTypes.GREENHOUSE_RECIPES)
-            .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+            .appearanceBlock(CASING_STEEL_SOLID)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("CCC", "CGC", "CGC", "CLC", "CCC")
                     .aisle("CMC", "GSG", "G#G", "LIL", "COC")
@@ -46,7 +50,7 @@ public class GreenHouse {
                             .or(blocks(GTBlocks.RUBBER_SAPLING.get())))
                     .where('I', blocks(Blocks.GLOWSTONE))
                     .where('L', blocks(GTBlocks.CASING_GRATE.get()))
-                    .where('C', blocks(GTBlocks.CASING_STEEL_SOLID.get())
+                    .where('C', blocks(CASING_STEEL_SOLID.get())
                             .or(Predicates.autoAbilities(definition.getRecipeTypes())))
                     .where('O', Predicates.abilities(PartAbility.MUFFLER)
                             .setExactLimit(1))
@@ -56,6 +60,7 @@ public class GreenHouse {
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                     GTCEu.id("gtceu:block/multiblock/implosion_compressor"))
+            .hasBER(true)
             .register();
     public static void init() {}
 }

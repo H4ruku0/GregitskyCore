@@ -9,8 +9,9 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
+import com.mrfrilled.gregitskycore.api.registries.GregitskyRegistration;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
-import com.mrfrilled.gregitskycore.common.machine.GreenHouse;
+import com.mrfrilled.gregitskycore.common.data.multiblocks.GreenHouse;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -24,6 +25,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
+
 @Mod(gregitskycore.MOD_ID)
 @SuppressWarnings("removal")
 public class gregitskycore {
@@ -33,6 +36,9 @@ public class gregitskycore {
     public static GTRegistrate REGISTRATE = GTRegistrate.create(gregitskycore.MOD_ID);
 
     public gregitskycore() {
+
+        init();
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -51,13 +57,20 @@ public class gregitskycore {
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
 
-        REGISTRATE.registerRegistrate();
+
     }
+
+    public static void init() {
+        GregitskyRegistration.REGISTRATE.registerRegistrate();
+
+    }
+
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
             LOGGER.info("Look, I found a {}!", Items.DIAMOND);
+
         });
     }
 
