@@ -1,163 +1,144 @@
 package com.mrfrilled.gregitskycore.data.recipes;
 
-import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
-import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
-import com.gregtechceu.gtceu.data.recipe.CustomTags;
-import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
-import com.mrfrilled.gregitskycore.common.data.multiblocks.GreenHouse;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
-import static com.gregtechceu.gtceu.api.GTValues.MV;
+import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.common.data.GTItems.FERTILIZER;
-import static com.gregtechceu.gtceu.common.data.GTMaterials.Water;
 import static com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes.GREENHOUSE_RECIPES;
 
 public class GREENHOUSE_RECIPES {
 
     public static void init(Consumer<FinishedRecipe> provider) {
-        loadGreenhouseRecipes(provider);
-
+        treeRecipes(provider);
+        plantRecipes(provider);
+        rubberTreeRecipes(provider);
 
         //if (GTCEu.Mods.isAE2Loaded()) {
         //    createAE2Recipes(provider);
         //}
     }
+    private static ArrayList<Item[]> Trees;
+    private static ArrayList<Object[]> Plants;
 
-    private static void greenhouseHelper(Consumer<FinishedRecipe> provider, String id, Item input, ItemStack output_normal, ItemStack output_boosted) {
-        greenhouseHelper(provider, id, input, List.of(output_normal), List.of(output_boosted));
 
+    private static void treesArrayInit() {
+        Trees = new ArrayList<>();
+
+        Trees.add(new Item[]{Items.OAK_SAPLING, Items.OAK_LOG});
+        Trees.add(new Item[]{Items.SPRUCE_SAPLING, Items.SPRUCE_LOG});
+        Trees.add(new Item[]{Items.BIRCH_SAPLING, Items.BIRCH_LOG});
+        Trees.add(new Item[]{Items.JUNGLE_SAPLING, Items.JUNGLE_LOG});
+        Trees.add(new Item[]{Items.ACACIA_SAPLING, Items.ACACIA_LOG});
+        Trees.add(new Item[]{Items.DARK_OAK_SAPLING, Items.DARK_OAK_LOG});
+        Trees.add(new Item[]{Items.MANGROVE_PROPAGULE, Items.MANGROVE_LOG});
+        Trees.add(new Item[]{Items.CHERRY_SAPLING, Items.CHERRY_LOG});
     }
 
-    private static void greenhouseHelper(Consumer<FinishedRecipe> provider, String id, Item input, List<ItemStack> output_normal, List<ItemStack> output_boosted) {
+    private static void plantsArrayInit() {
+        Plants = new ArrayList<>();
 
-        GREENHOUSE_RECIPES.recipeBuilder(id)
-                .circuitMeta(2)
-                .notConsumable(input)
-                .inputItems(FERTILIZER.get(), 4)
-                .inputFluids(Water, 1000)
-                .outputItems(output_normal)
-                .duration(320)
-                .EUt(MV)
-                .save(provider);
-        GREENHOUSE_RECIPES.recipeBuilder(id + "_boosted")
+        Plants.add(new Object[]{Items.PUMPKIN_SEEDS, Items.PUMPKIN, 6});
+        Plants.add(new Object[]{Items.BEETROOT_SEEDS, Items.BEETROOT, 16});
+        Plants.add(new Object[]{Items.SWEET_BERRIES, Items.SWEET_BERRIES, 16});
+        Plants.add(new Object[]{Items.GLOW_BERRIES, Items.GLOW_BERRIES, 8});
+        Plants.add(new Object[]{Items.WHEAT_SEEDS, Items.WHEAT, 16});
+        Plants.add(new Object[]{Items.MELON_SEEDS, Items.MELON, 6});
+        Plants.add(new Object[]{Items.CARROT, Items.CARROT, 12});
+        Plants.add(new Object[]{Items.SUGAR_CANE, Items.SUGAR_CANE, 12});
+        Plants.add(new Object[]{Items.KELP, Items.KELP, 12});
+        Plants.add(new Object[]{Items.CACTUS, Items.CACTUS, 12});
+        Plants.add(new Object[]{Items.BROWN_MUSHROOM, Items.BROWN_MUSHROOM, 12});
+        Plants.add(new Object[]{Items.RED_MUSHROOM, Items.RED_MUSHROOM, 12});
+        Plants.add(new Object[]{Items.NETHER_WART, Items.NETHER_WART, 12});
+        Plants.add(new Object[]{Items.BAMBOO, Items.BAMBOO, 16});
+    }
+
+    private static void treeRecipes(Consumer<FinishedRecipe> provider) {
+        treesArrayInit();
+        for(Item[] woodType : Trees){
+            GREENHOUSE_RECIPES.recipeBuilder(woodType[1].toString())
+                    .EUt(128)
+                    .duration(240*6)
+                    .circuitMeta(1)
+                    .inputFluids(GTMaterials.Water.getFluid(1000))
+                    .notConsumable(woodType[0])
+                    .outputItems(woodType[1], 64)
+                    .outputItems(woodType[0], 6)
+                    .save(provider);
+
+            GREENHOUSE_RECIPES.recipeBuilder(woodType[1].toString() + "_fertilizer")
+                    .EUt(128)
+                    .duration(240*4)
+                    .circuitMeta(2)
+                    .inputFluids(GTMaterials.Water.getFluid(1000))
+                    .notConsumable(woodType[0])
+                    .inputItems(FERTILIZER, 4)
+                    .outputItems(woodType[1], 64)
+                    .outputItems(woodType[1], 64)
+                    .outputItems(woodType[0], 12)
+                    .save(provider);
+
+        }
+    }
+
+    private static void plantRecipes(Consumer<FinishedRecipe> provider) {
+        plantsArrayInit();
+        for(Object[] seedType : Plants) {
+            GREENHOUSE_RECIPES.recipeBuilder(seedType[1].toString())
+                    .EUt(128)
+                    .duration(240*4)
+                    .circuitMeta(1)
+                    .inputFluids(GTMaterials.Water.getFluid(1000))
+                    .notConsumable((Item) seedType[0])
+                    .outputItems((Item) seedType[1], (int)seedType[2])
+                    .save(provider);
+
+            GREENHOUSE_RECIPES.recipeBuilder(seedType[1].toString() + "_fertilizer")
+                    .EUt(128)
+                    .duration(240*2)
+                    .circuitMeta(2)
+                    .inputFluids(GTMaterials.Water.getFluid(1000))
+                    .notConsumable((Item) seedType[0])
+                    .inputItems(FERTILIZER, 4)
+                    .outputItems((Item) seedType[1], 2 * (int) seedType[2])
+                    .save(provider);
+        }
+    }
+
+    private static void rubberTreeRecipes(Consumer<FinishedRecipe> provider) {
+        GREENHOUSE_RECIPES.recipeBuilder("rubber_tree")
+                .EUt(128)
+                .duration(240*6)
                 .circuitMeta(1)
-                .notConsumable(input)
-                .inputFluids(Water, 1000)
-                .outputItems(output_boosted)
-                .duration(320)
-                .EUt(MV)
+                .inputFluids(GTMaterials.Water.getFluid(1000))
+                .notConsumable(GTBlocks.RUBBER_SAPLING.asStack())
+                .outputItems(GTBlocks.RUBBER_LOG, 16)
+                .outputItems(GTBlocks.RUBBER_SAPLING, 3)
+                .outputItems(GTItems.STICKY_RESIN, 4)
+                .save(provider);
+
+        GREENHOUSE_RECIPES.recipeBuilder("rubber_tree_fertilizer")
+                .EUt(128)
+                .duration(240*4)
+                .circuitMeta(2)
+                .inputFluids(GTMaterials.Water.getFluid(1000))
+                .notConsumable(GTBlocks.RUBBER_SAPLING.asStack())
+                .inputItems(FERTILIZER, 4)
+                .outputItems(GTBlocks.RUBBER_LOG, 32)
+                .outputItems(GTBlocks.RUBBER_SAPLING, 6)
+                .outputItems(GTItems.STICKY_RESIN, 8)
                 .save(provider);
     }
-
-
-    private static void loadGreenhouseRecipes(Consumer<FinishedRecipe> provider) {
-
-
-        // Rubber
-        greenhouseHelper(provider, "rubber_sapling", GTBlocks.RUBBER_SAPLING.asItem(),
-                List.of(new ItemStack(GTBlocks.RUBBER_LOG.get(), 64), new ItemStack(GTItems.STICKY_RESIN.get(), 8), new ItemStack(GTBlocks.RUBBER_SAPLING.asItem(), 4)),
-                List.of(new ItemStack(GTBlocks.RUBBER_LOG.get(), 64), new ItemStack(GTItems.STICKY_RESIN.get(), 16), new ItemStack(GTBlocks.RUBBER_SAPLING.asItem(), 4)));
-
-        // Oak
-        greenhouseHelper(provider, "oak_sapling", Blocks.OAK_SAPLING.asItem(),
-                List.of(new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.OAK_SAPLING.asItem(), 4)),
-                List.of(new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.OAK_SAPLING.asItem(), 4)));
-
-        // Dark Oak
-        greenhouseHelper(provider, "dark_oak_sapling", Blocks.DARK_OAK_SAPLING.asItem(),
-                List.of(new ItemStack(Blocks.DARK_OAK_LOG, 64), new ItemStack(Blocks.DARK_OAK_SAPLING.asItem(), 4)),
-                List.of(new ItemStack(Blocks.DARK_OAK_LOG, 64), new ItemStack(Blocks.DARK_OAK_LOG, 64), new ItemStack(Blocks.DARK_OAK_SAPLING.asItem(), 4)));
-
-        // Spruce
-        greenhouseHelper(provider, "spruce_sapling", Blocks.SPRUCE_SAPLING.asItem(),
-                List.of(new ItemStack(Blocks.SPRUCE_LOG, 64), new ItemStack(Blocks.SPRUCE_SAPLING.asItem(), 4)),
-                List.of(new ItemStack(Blocks.SPRUCE_LOG, 64), new ItemStack(Blocks.SPRUCE_LOG, 64), new ItemStack(Blocks.SPRUCE_SAPLING.asItem(), 4)));
-
-        // Birch
-        greenhouseHelper(provider, "birch_sapling", Blocks.BIRCH_SAPLING.asItem(),
-                List.of(new ItemStack(Blocks.BIRCH_LOG, 64), new ItemStack(Blocks.BIRCH_SAPLING.asItem(), 4)),
-                List.of(new ItemStack(Blocks.BIRCH_LOG, 64), new ItemStack(Blocks.BIRCH_LOG, 64), new ItemStack(Blocks.BIRCH_SAPLING.asItem(), 4)));
-
-        // Acacia
-        greenhouseHelper(provider, "acacia_sapling", Blocks.ACACIA_SAPLING.asItem(),
-                List.of(new ItemStack(Blocks.ACACIA_LOG, 64), new ItemStack(Blocks.ACACIA_SAPLING.asItem(), 4)),
-                List.of(new ItemStack(Blocks.ACACIA_LOG, 64), new ItemStack(Blocks.ACACIA_LOG, 64), new ItemStack(Blocks.ACACIA_SAPLING.asItem(), 4)));
-
-        // Jungle
-        greenhouseHelper(provider, "jungle_sapling", Blocks.JUNGLE_SAPLING.asItem(),
-                List.of(new ItemStack(Blocks.JUNGLE_LOG, 64), new ItemStack(Blocks.JUNGLE_SAPLING.asItem(), 4)),
-                List.of(new ItemStack(Blocks.JUNGLE_LOG, 64), new ItemStack(Blocks.JUNGLE_LOG, 64), new ItemStack(Blocks.JUNGLE_SAPLING.asItem(), 4)));
-
-
-        // Azalea
-        greenhouseHelper(provider, "azalea_sapling", Blocks.AZALEA.asItem(),
-                List.of(new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.AZALEA.asItem(), 4)),
-                List.of(new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.AZALEA.asItem(), 4)));
-
-
-        // Flowering Azalea
-        greenhouseHelper(provider, "flowering_azalea", Blocks.FLOWERING_AZALEA.asItem(),
-                List.of(new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.FLOWERING_AZALEA.asItem(), 4)),
-                List.of(new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.OAK_LOG, 64), new ItemStack(Blocks.AZALEA.asItem(), 4)));
-
-        // Mangrove
-        greenhouseHelper(provider, "mangrove_propagule", Blocks.MANGROVE_PROPAGULE.asItem(),
-                List.of(new ItemStack(Blocks.MANGROVE_LOG, 64), new ItemStack(Blocks.MANGROVE_PROPAGULE.asItem(), 4)),
-                List.of(new ItemStack(Blocks.MANGROVE_LOG, 64), new ItemStack(Blocks.MANGROVE_LOG, 64), new ItemStack(Blocks.MANGROVE_PROPAGULE.asItem(), 4)));
-
-
-        ////// Crops //////
-
-        // Sugarcane
-        greenhouseHelper(provider, "sugar_cane", Items.SUGAR_CANE, new ItemStack(Items.SUGAR_CANE, 24), new ItemStack(Items.SUGAR_CANE, 48));
-
-        // Kelp
-        greenhouseHelper(provider, "kelp", Items.KELP, new ItemStack(Items.KELP, 24), new ItemStack(Items.KELP, 48));
-
-        // Bamboo
-        greenhouseHelper(provider, "bamboo", Items.BAMBOO, new ItemStack(Items.BAMBOO, 24), new ItemStack(Items.BAMBOO, 48));
-
-        // Cactus
-        greenhouseHelper(provider, "cactus", Items.CACTUS, new ItemStack(Items.CACTUS, 24), new ItemStack(Items.CACTUS, 48));
-
-        // Wheat
-        greenhouseHelper(provider, "wheat", Items.WHEAT_SEEDS, new ItemStack(Items.WHEAT, 24), new ItemStack(Items.WHEAT, 48));
-
-        // Carrot
-        greenhouseHelper(provider, "carrot", Items.CARROT, new ItemStack(Items.CARROT, 24), new ItemStack(Items.CARROT, 48));
-
-        // Potato
-        greenhouseHelper(provider, "potato", Items.POTATO, new ItemStack(Items.POTATO, 24), new ItemStack(Items.POTATO, 48));
-
-        // Beetroot
-        greenhouseHelper(provider, "beetroot", Items.BEETROOT_SEEDS, new ItemStack(Items.BEETROOT, 24), new ItemStack(Items.BEETROOT, 48));
-
-        // Mellon
-        greenhouseHelper(provider, "melon", Items.MELON_SEEDS, new ItemStack(Items.MELON, 12), new ItemStack(Items.MELON, 24));
-
-        // Pumpkin
-        greenhouseHelper(provider, "pumpkin", Items.PUMPKIN_SEEDS, new ItemStack(Items.PUMPKIN, 12), new ItemStack(Items.PUMPKIN, 24));
-
-        // Nether Wart
-        greenhouseHelper(provider, "nether_wart", Items.NETHER_WART, new ItemStack(Items.NETHER_WART, 12), new ItemStack(Items.NETHER_WART, 24));
-
-        // Red Mushroom
-        greenhouseHelper(provider, "red_mushroom", Items.RED_MUSHROOM, new ItemStack(Items.RED_MUSHROOM, 12), new ItemStack(Items.RED_MUSHROOM, 24));
-
-        // Brown Mushroom
-        greenhouseHelper(provider, "brown_mushroom", Items.BROWN_MUSHROOM, new ItemStack(Items.BROWN_MUSHROOM, 12), new ItemStack(Items.BROWN_MUSHROOM, 24));
-    }
-    //public static void init() {}
 
 }
