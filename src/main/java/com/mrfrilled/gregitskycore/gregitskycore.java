@@ -12,6 +12,7 @@ import com.gregtechceu.gtceu.api.sound.SoundEntry;
 import com.mrfrilled.gregitskycore.api.registries.GregitskyRegistration;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 import com.mrfrilled.gregitskycore.common.data.multiblocks.GreenHouse;
+import com.mrfrilled.gregitskycore.common.data.multiblocks.PrimitiveOreMiner;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -137,7 +138,8 @@ public class gregitskycore {
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         // CustomMachines.init();
-        GreenHouse.init(); //Error in this line
+        GreenHouse.init();
+        PrimitiveOreMiner.init();
     }
 
     /**

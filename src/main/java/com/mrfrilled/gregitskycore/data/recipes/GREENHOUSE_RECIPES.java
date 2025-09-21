@@ -68,7 +68,7 @@ public class GREENHOUSE_RECIPES {
         treesArrayInit();
         for(Item[] woodType : Trees){
             GREENHOUSE_RECIPES.recipeBuilder(woodType[1].toString())
-                    .EUt(128)
+                    .EUt(GTValues.VA[GTValues.MV])
                     .duration(240*6)
                     .circuitMeta(1)
                     .inputFluids(GTMaterials.Water.getFluid(1000))
@@ -78,7 +78,7 @@ public class GREENHOUSE_RECIPES {
                     .save(provider);
 
             GREENHOUSE_RECIPES.recipeBuilder(woodType[1].toString() + "_fertilizer")
-                    .EUt(128)
+                    .EUt(GTValues.VA[GTValues.MV])
                     .duration(240*4)
                     .circuitMeta(2)
                     .inputFluids(GTMaterials.Water.getFluid(1000))
@@ -96,7 +96,7 @@ public class GREENHOUSE_RECIPES {
         plantsArrayInit();
         for(Object[] seedType : Plants) {
             GREENHOUSE_RECIPES.recipeBuilder(seedType[1].toString())
-                    .EUt(128)
+                    .EUt(GTValues.VA[GTValues.MV])
                     .duration(240*4)
                     .circuitMeta(1)
                     .inputFluids(GTMaterials.Water.getFluid(1000))
@@ -105,7 +105,7 @@ public class GREENHOUSE_RECIPES {
                     .save(provider);
 
             GREENHOUSE_RECIPES.recipeBuilder(seedType[1].toString() + "_fertilizer")
-                    .EUt(128)
+                    .EUt(GTValues.VA[GTValues.MV])
                     .duration(240*2)
                     .circuitMeta(2)
                     .inputFluids(GTMaterials.Water.getFluid(1000))
@@ -118,7 +118,7 @@ public class GREENHOUSE_RECIPES {
 
     private static void rubberTreeRecipes(Consumer<FinishedRecipe> provider) {
         GREENHOUSE_RECIPES.recipeBuilder("rubber_tree")
-                .EUt(128)
+                .EUt(GTValues.VA[GTValues.MV])
                 .duration(240*6)
                 .circuitMeta(1)
                 .inputFluids(GTMaterials.Water.getFluid(1000))
@@ -129,7 +129,7 @@ public class GREENHOUSE_RECIPES {
                 .save(provider);
 
         GREENHOUSE_RECIPES.recipeBuilder("rubber_tree_fertilizer")
-                .EUt(128)
+                .EUt(GTValues.VA[GTValues.MV])
                 .duration(240*4)
                 .circuitMeta(2)
                 .inputFluids(GTMaterials.Water.getFluid(1000))

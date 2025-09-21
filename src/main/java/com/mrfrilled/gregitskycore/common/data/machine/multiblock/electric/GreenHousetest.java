@@ -1,7 +1,6 @@
-package com.mrfrilled.gregitskycore.common.data.machine;
+package com.mrfrilled.gregitskycore.common.data.machine.multiblock.electric;
 
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
-import com.gregtechceu.gtceu.api.machine.multiblock.WorkableMultiblockMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 
 public class GreenHousetest extends WorkableElectricMultiblockMachine {

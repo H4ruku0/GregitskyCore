@@ -1,6 +1,7 @@
 package com.mrfrilled.gregitskycore.data.recipes;
 
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
+import com.mrfrilled.gregitskycore.common.data.multiblocks.PrimitiveOreMiner;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.function.Consumer;
 
 import static com.mrfrilled.gregitskycore.common.data.multiblocks.GreenHouse.GREENHOUSE;
+import static com.mrfrilled.gregitskycore.common.data.multiblocks.PrimitiveOreMiner.PRIMITIVE_ORE_MINER;
 import static net.minecraft.world.item.Items.*;
 
 public class MiscRecipeLoader {
@@ -24,7 +26,8 @@ public class MiscRecipeLoader {
 
     private static void GTMultiMachines_Recipes(Consumer<FinishedRecipe> provider) {
 
-        // LV
+        // CONTROLLERS //
+            // GreenHouse
         VanillaRecipeHelper.addShapedRecipe(provider, "greenhouse", GREENHOUSE.asStack(),
                 "C",
                 "P",
@@ -32,6 +35,13 @@ public class MiscRecipeLoader {
                 'C', SAND,
                 'P', IRON_INGOT);
 
+            // PrimitiveOreMiner
+        VanillaRecipeHelper.addShapedRecipe(provider, "primitive_ore_miner", PRIMITIVE_ORE_MINER.asStack(),
+                "C",
+                "P",
+                "P",
+                'C', SAND,
+                'P', IRON_INGOT);
         //ASSEMBLER_RECIPES.recipeBuilder("battery_hull_lv")
         //        .inputItems(cableGtSingle, Tin)
         //        .inputItems(plate, BatteryAlloy)

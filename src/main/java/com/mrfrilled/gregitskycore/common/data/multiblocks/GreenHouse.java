@@ -11,7 +11,7 @@ import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 
 import com.gregtechceu.gtceu.common.data.models.GTMachineModels;
-import com.mrfrilled.gregitskycore.common.data.machine.GreenHousetest;
+import com.mrfrilled.gregitskycore.common.data.machine.multiblock.electric.GreenHousetest;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Blocks;
 
