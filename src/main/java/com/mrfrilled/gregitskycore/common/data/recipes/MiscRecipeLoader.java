@@ -1,16 +1,12 @@
-package com.mrfrilled.gregitskycore.data.recipes;
+package com.mrfrilled.gregitskycore.common.data.recipes;
 
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
-import com.mrfrilled.gregitskycore.common.data.multiblocks.PrimitiveOreMiner;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
-import static com.mrfrilled.gregitskycore.common.data.multiblocks.GreenHouse.GREENHOUSE;
-import static com.mrfrilled.gregitskycore.common.data.multiblocks.PrimitiveOreMiner.PRIMITIVE_ORE_MINER;
+import static com.mrfrilled.gregitskycore.common.machine.multiblock.multi.GreenHouse.GREENHOUSE;
+import static com.mrfrilled.gregitskycore.common.machine.multiblock.multi.PrimitiveOreMiner.PRIMITIVE_ORE_MINER;
 import static net.minecraft.world.item.Items.*;
 
 public class MiscRecipeLoader {

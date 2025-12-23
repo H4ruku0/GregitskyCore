@@ -29,8 +29,8 @@ public class GregitskyRecipeTypes {
             //        .setSound(GTSoundEntries.COOLING);
             //
             PRIMITIVE_ORE_MINER = register("primitive_ore_miner", MULTIBLOCK)
-                .setMaxIOSize(3, 6, 2, 2)
-                .setEUIO(IO.IN)
+                .setMaxIOSize(6, 9, 3, 3)
+                //.setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.BATH);
 

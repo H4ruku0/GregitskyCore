@@ -9,10 +9,12 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
-import com.mrfrilled.gregitskycore.api.registries.GregitskyRegistration;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
-import com.mrfrilled.gregitskycore.common.data.multiblocks.GreenHouse;
-import com.mrfrilled.gregitskycore.common.data.multiblocks.PrimitiveOreMiner;
+import com.mrfrilled.gregitskycore.common.machine.multiblock.multi.GreenHouse;
+import com.mrfrilled.gregitskycore.common.machine.multiblock.multi.PrimitiveOreMiner;
+import com.mrfrilled.gregitskycore.datagen.GregitskyDataGenerators;
+import com.mrfrilled.gregitskycore.datagen.lang.GregitskyLangHandler;
+import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -26,6 +28,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry.REGISTRATE;
 
 
 @Mod(gregitskycore.MOD_ID)
@@ -34,11 +37,14 @@ public class gregitskycore {
 
     public static final String MOD_ID = "gregitskycore";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate REGISTRATE = GTRegistrate.create(gregitskycore.MOD_ID);
+
+    static {
+        REGISTRATE.addDataGenerator(ProviderType.LANG, GregitskyLangHandler::init);
+    }
 
     public gregitskycore() {
 
-        init();
+        GregitskyDataGenerators.init();
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -58,13 +64,10 @@ public class gregitskycore {
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
 
-
+        REGISTRATE.registerRegistrate();
     }
 
-    public static void init() {
-        GregitskyRegistration.REGISTRATE.registerRegistrate();
 
-    }
 
 
     private void commonSetup(final FMLCommonSetupEvent event) {

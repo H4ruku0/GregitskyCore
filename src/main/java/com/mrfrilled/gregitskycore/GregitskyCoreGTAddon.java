@@ -4,9 +4,8 @@ import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
-import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
-import com.mrfrilled.gregitskycore.data.recipes.GREENHOUSE_RECIPES;
-import com.mrfrilled.gregitskycore.common.data.recipe.GregitskyRecipes;
+import com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry;
+import com.mrfrilled.gregitskycore.common.data.GregitskyRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -17,7 +16,7 @@ public class GregitskyCoreGTAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return gregitskycore.REGISTRATE;
+        return GregitskyRegistry.REGISTRATE;
     }
 
     @Override

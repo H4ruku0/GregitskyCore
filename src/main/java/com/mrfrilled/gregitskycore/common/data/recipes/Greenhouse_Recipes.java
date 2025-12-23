@@ -1,4 +1,4 @@
-package com.mrfrilled.gregitskycore.data.recipes;
+package com.mrfrilled.gregitskycore.common.data.recipes;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
@@ -6,18 +6,15 @@ import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.common.data.GTItems.FERTILIZER;
 import static com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes.GREENHOUSE_RECIPES;
 
-public class GREENHOUSE_RECIPES {
+public class Greenhouse_Recipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
         treeRecipes(provider);
