@@ -1,11 +1,12 @@
 package com.mrfrilled.gregitskycore;
 
+import com.mrfrilled.gregitskycore.common.data.GregitskyRecipes;
+import com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry;
+
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
-import com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry;
-import com.mrfrilled.gregitskycore.common.data.GregitskyRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -36,7 +37,6 @@ public class GregitskyCoreGTAddon implements IGTAddon {
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         // CustomRecipes.init(provider);
         GregitskyRecipes.init(provider);
-
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.

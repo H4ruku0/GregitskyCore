@@ -1,25 +1,23 @@
 package com.mrfrilled.gregitskycore.common.machine.multiblock.multi;
 
+import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
+import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
-import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Blocks;
-
-
-import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.controller;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.CASING_STEEL_SOLID;
 import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry.REGISTRATE;
-
 
 public class GreenHouse {
 
@@ -57,8 +55,10 @@ public class GreenHouse {
                     .where('N', Predicates.abilities(PartAbility.MAINTENANCE))
                     .where('#', Predicates.air())
                     .build())
-            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"), GTCEu.id("block/multiblock/implosion_compressor"))
+            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
+                    GTCEu.id("block/multiblock/implosion_compressor"))
             .hasBER(true)
             .register();
+
     public static void init() {}
 }

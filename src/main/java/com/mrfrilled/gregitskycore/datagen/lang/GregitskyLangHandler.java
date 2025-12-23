@@ -15,5 +15,4 @@ public class GregitskyLangHandler {
     protected static String getSubKey(String key, int index) {
         return key + "." + index;
     }
-
 }
