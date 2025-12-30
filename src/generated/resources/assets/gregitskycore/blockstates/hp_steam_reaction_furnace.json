@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "gregitskycore:block/machine/hp_steam_reaction_furnace",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "gregitskycore:block/machine/hp_steam_reaction_furnace",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gregitskycore:block/machine/hp_steam_reaction_furnace"
+    },
+    "facing=south": {
+      "model": "gregitskycore:block/machine/hp_steam_reaction_furnace",
+      "y": 180
+    },
+    "facing=up": {
+      "gtceu:z": 180,
+      "model": "gregitskycore:block/machine/hp_steam_reaction_furnace",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "gregitskycore:block/machine/hp_steam_reaction_furnace",
+      "y": 270
+    }
+  }
+}

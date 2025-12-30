@@ -1,23 +1,6 @@
 package com.mrfrilled.gregitskycore.common.data.recipes;
 
-import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
-import com.gregtechceu.gtceu.api.data.chemical.material.Material;
-import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
-import com.gregtechceu.gtceu.common.data.GTMaterials;
-
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-
-import java.util.List;
-import java.util.function.Consumer;
-
-import static com.gregtechceu.gtceu.common.data.GTMaterials.Iron;
-import static com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes.*;
-
-public class PrimitiveOreMiner_Recipes {
+public class PRIMITIVE_ORE_MINER_RECIPES {
 
 //    public static void init(Consumer<FinishedRecipe> provider) {
 //        register(provider);

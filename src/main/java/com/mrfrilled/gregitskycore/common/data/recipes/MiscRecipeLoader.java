@@ -45,11 +45,11 @@ public class MiscRecipeLoader {
                 'P', IRON_INGOT);
 
         /// SINGLEBLOCK ///
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_extractor_bronze",
-                STEAM_EXTRACTOR_TESTING.left().asStack(), "XXX", "PMG", "XXX",
-                'M', GTBlocks.BRONZE_HULL.asStack(),
-                'X', new MaterialEntry(TagPrefix.pipeSmallFluid, GTMaterials.Bronze), 'P', CustomTags.PISTONS,
-                'G', new ItemStack(Blocks.GLASS));
+        //VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_extractor_bronze",
+        //        STEAM_EXTRACTOR_TESTING.left().asStack(), "XXX", "PMG", "XXX",
+        //        'M', GTBlocks.BRONZE_HULL.asStack(),
+        //        'X', new MaterialEntry(TagPrefix.pipeSmallFluid, GTMaterials.Bronze), 'P', CustomTags.PISTONS,
+        //        'G', new ItemStack(Blocks.GLASS));
         // ASSEMBLER_RECIPES.recipeBuilder("battery_hull_lv")
         // .inputItems(cableGtSingle, Tin)
         // .inputItems(plate, BatteryAlloy)

@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import static com.gregtechceu.gtceu.common.data.GTItems.FERTILIZER;
 import static com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes.GREENHOUSE_RECIPES;
 
-public class Greenhouse_Recipes {
+public class GREENHOUSE_RECIPES {
 
     public static void init(Consumer<FinishedRecipe> provider) {
         treeRecipes(provider);

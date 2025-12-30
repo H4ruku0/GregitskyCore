@@ -23,6 +23,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.client.model.machine.MachineRenderState;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.recipe.condition.VentCondition;
 
 import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
@@ -35,10 +36,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
+import net.minecraftforge.fluids.FluidStack;
 
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.LinkedHashMap;
+
 
 public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIMachine, IExhaustVentMachine {
 
@@ -74,8 +77,16 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
                 this,
                 getRecipeType().getMaxInputs(FluidRecipeCapability.CAP),
                 8 * FluidType.BUCKET_VOLUME,
-                IO.IN
-        );
+                IO.IN) {
+            @Override
+            public int fill(FluidStack resource, FluidAction action) {
+                // Rechaza steam, acepta otros fluidos
+                if (resource.getFluid().isSame(GTMaterials.Steam.getFluid())) {
+                    return 0;  // No inserta si es steam
+                }
+                return super.fill(resource, action);  // Inserta si no es steam
+            }
+        };;
 
         this.exportFluids = new NotifiableFluidTank(
                 this,
@@ -87,7 +98,16 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
 
     @Override
     protected NotifiableFluidTank createSteamTank(Object... args) {
-        return new NotifiableFluidTank(this, 1, 16 * FluidType.BUCKET_VOLUME, IO.IN);
+        return new NotifiableFluidTank(this, 1, 16 * FluidType.BUCKET_VOLUME, IO.IN) {
+            @Override
+            public int fill(FluidStack resource, FluidAction action) {
+                // Solo acepta steam
+                if (!resource.getFluid().isSame(GTMaterials.Steam.getFluid())) {
+                    return 0;  // No inserta si no es steam
+                }
+                return super.fill(resource, action);  // Inserta si es steam
+            }
+        };
     }
 
     @Override
