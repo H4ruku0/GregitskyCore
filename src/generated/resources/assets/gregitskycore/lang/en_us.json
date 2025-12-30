@@ -1,6 +1,8 @@
 {
   "block.gregitskycore.greenhouse": "Greenhouse",
+  "block.gregitskycore.hp_steam_extractor": "High Pressure Steam Extractor",
   "block.gregitskycore.humidity_filter_casing": "Humidity Filter Casing",
+  "block.gregitskycore.lp_steam_extractor": "Low Pressure Steam Extractor",
   "block.gregitskycore.primitive_ore_miner": "Primitive Ore Miner",
   "itemGroup.gregitskycore.creative_tab": "GregitskyCore"
 }

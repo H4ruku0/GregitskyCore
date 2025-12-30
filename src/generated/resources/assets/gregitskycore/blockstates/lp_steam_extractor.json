@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "gregitskycore:block/machine/lp_steam_extractor",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "gregitskycore:block/machine/lp_steam_extractor",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gregitskycore:block/machine/lp_steam_extractor"
+    },
+    "facing=south": {
+      "model": "gregitskycore:block/machine/lp_steam_extractor",
+      "y": 180
+    },
+    "facing=up": {
+      "gtceu:z": 180,
+      "model": "gregitskycore:block/machine/lp_steam_extractor",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "gregitskycore:block/machine/lp_steam_extractor",
+      "y": 270
+    }
+  }
+}
