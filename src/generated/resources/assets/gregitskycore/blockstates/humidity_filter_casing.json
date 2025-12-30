@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gregitskycore:block/humidity_filter_casing"
+    }
+  }
+}
