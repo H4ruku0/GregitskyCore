@@ -4,6 +4,9 @@ import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.mrfrilled.gregitskycore.common.data.GregitskyItems;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
+import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
+import com.mrfrilled.gregitskycore.common.machine.GregitskyMachineUtils;
+import com.mrfrilled.gregitskycore.common.machine.GregitskyMachines;
 import com.mrfrilled.gregitskycore.common.machine.multiblock.multi.GreenHouse;
 import com.mrfrilled.gregitskycore.common.machine.multiblock.multi.PrimitiveOreMiner;
 import com.mrfrilled.gregitskycore.datagen.GregitskyDataGenerators;
@@ -17,10 +20,12 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
+import com.mrfrilled.gregitskycore.item.CustomItems;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -50,18 +55,21 @@ public class gregitskycore {
                     builder -> builder
                             .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(gregitskycore.MOD_ID, REGISTRATE))
                             .title(REGISTRATE.addLang("itemGroup", gregitskycore.id("creative_tab"), "GregitskyCore"))
-                            .icon(GTBlocks.CASING_BRONZE_GEARBOX::asStack)
+                            .icon(GregitskyBlocks.HUMIDITY_FILTER_CASING::asStack)
                             .build())
             .register();
 
     public static void init() {
         GregitskyItems.init();
+        GregitskyBlocks.init();
     }
 
     public gregitskycore() {
         GregitskyDataGenerators.init();
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        CustomItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -155,6 +163,8 @@ public class gregitskycore {
         // CustomMachines.init();
         GreenHouse.init();
         PrimitiveOreMiner.init();
+        GregitskyMachines.init();
+        GregitskyMachineUtils.init();
     }
 
     /**

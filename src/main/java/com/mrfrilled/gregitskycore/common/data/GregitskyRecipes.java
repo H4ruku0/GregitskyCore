@@ -11,6 +11,6 @@ public class GregitskyRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {
         MiscRecipeLoader.init(provider);
         Greenhouse_Recipes.init(provider);
-        PrimitiveOreMiner_Recipes.init(provider);
+        //PrimitiveOreMiner_Recipes.init(provider);
     }
 }

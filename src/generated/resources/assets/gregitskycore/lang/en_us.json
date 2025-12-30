@@ -1,4 +1,6 @@
 {
   "block.gregitskycore.greenhouse": "Greenhouse",
-  "block.gregitskycore.primitive_ore_miner": "Primitive Ore Miner"
+  "block.gregitskycore.humidity_filter_casing": "Humidity Filter Casing",
+  "block.gregitskycore.primitive_ore_miner": "Primitive Ore Miner",
+  "itemGroup.gregitskycore.creative_tab": "GregitskyCore"
 }

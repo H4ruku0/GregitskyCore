@@ -1,6 +1,7 @@
 package com.mrfrilled.gregitskycore;
 
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipes;
+import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
 import com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
@@ -21,7 +22,9 @@ public class GregitskyCoreGTAddon implements IGTAddon {
     }
 
     @Override
-    public void initializeAddon() {}
+    public void initializeAddon() {
+        GregitskyBlocks.init();
+    }
 
     @Override
     public String addonModId() {
