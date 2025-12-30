@@ -133,6 +133,10 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
         storages.put(IO.IN, ItemRecipeCapability.CAP, importItems.storage);
         storages.put(IO.OUT, ItemRecipeCapability.CAP, exportItems.storage);
 
+        storages.put(IO.IN, FluidRecipeCapability.CAP, importFluids);
+        storages.put(IO.OUT, FluidRecipeCapability.CAP, exportFluids);
+
+
         var group = getRecipeType().getRecipeUI().createUITemplate(recipeLogic::getProgressPercent,
                 storages,
                 new CompoundTag(),
