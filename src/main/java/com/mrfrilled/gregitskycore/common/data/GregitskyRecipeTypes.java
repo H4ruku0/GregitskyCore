@@ -16,9 +16,9 @@ public class GregitskyRecipeTypes {
     public static GTRecipeType PRIMITIVE_ORE_MINER;
     public static GTRecipeType REACTION_FURNACE_RECIPES;
     public static GTRecipeType VULCANIZER_RECIPES;
+    public static GTRecipeType LATEX_COLLECTOR_RECIPES;
 
     public static void init() {
-
         /// MULTIBLOCK ///
 
         GREENHOUSE_RECIPES = register("greenhouse", MULTIBLOCK)
@@ -37,15 +37,20 @@ public class GregitskyRecipeTypes {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.BATH);
 
-            ///  SINGLE-BLOCK ///
+        /// SINGLE-BLOCK ///
 
         REACTION_FURNACE_RECIPES = register("reaction_furnace", ELECTRIC)
                 .setMaxIOSize(3, 2, 2, 3)
                 .setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.FURNACE);
+                .setSound(GTSoundEntries.CHEMICAL);
         VULCANIZER_RECIPES = register("vulcanizer", ELECTRIC)
-                .setMaxIOSize(4, 2, 2, 2)
+                .setMaxIOSize(4, 2, 0, 0)
+                .setEUIO(IO.IN)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.FURNACE);
+        LATEX_COLLECTOR_RECIPES = register("latex_collector", ELECTRIC)
+                .setMaxIOSize(0, 2, 1, 2)
                 .setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.FURNACE);

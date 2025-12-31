@@ -1,10 +1,17 @@
 {
   "block.gregitskycore.greenhouse": "ǝsnoɥuǝǝɹ⅁",
+  "block.gregitskycore.hp_steam_latex_collector": "ɹoʇɔǝןןoƆ xǝʇɐꞀ ɯɐǝʇS ǝɹnssǝɹԀ ɥbıH",
+  "block.gregitskycore.hp_steam_mixer": "ɹǝxıW ɯɐǝʇS ǝɹnssǝɹԀ ɥbıH",
   "block.gregitskycore.hp_steam_reaction_furnace": "ǝɔɐuɹnℲ uoıʇɔɐǝᴚ ɯɐǝʇS ǝɹnssǝɹԀ ɥbıH",
   "block.gregitskycore.hp_steam_vulcanizer": "ɹǝzıuɐɔןnΛ ɯɐǝʇS ǝɹnssǝɹԀ ɥbıH",
   "block.gregitskycore.humidity_filter_casing": "buısɐƆ ɹǝʇןıℲ ʎʇıpıɯnH",
+  "block.gregitskycore.hv_latex_collector": "ɹ§II ɹoʇɔǝןןoƆ xǝʇɐꞀ pǝɔuɐʌpⱯ9§",
+  "block.gregitskycore.lp_steam_latex_collector": "ɹoʇɔǝןןoƆ xǝʇɐꞀ ɯɐǝʇS ǝɹnssǝɹԀ ʍoꞀ",
+  "block.gregitskycore.lp_steam_mixer": "ɹǝxıW ɯɐǝʇS ǝɹnssǝɹԀ ʍoꞀ",
   "block.gregitskycore.lp_steam_reaction_furnace": "ǝɔɐuɹnℲ uoıʇɔɐǝᴚ ɯɐǝʇS ǝɹnssǝɹԀ ʍoꞀ",
   "block.gregitskycore.lp_steam_vulcanizer": "ɹǝzıuɐɔןnΛ ɯɐǝʇS ǝɹnssǝɹԀ ʍoꞀ",
+  "block.gregitskycore.lv_latex_collector": "ɹ§ ɹoʇɔǝןןoƆ xǝʇɐꞀ ɔısɐᗺ",
+  "block.gregitskycore.mv_latex_collector": "ɹ§ ɹoʇɔǝןןoƆ xǝʇɐꞀ pǝɔuɐʌpⱯq§",
   "block.gregitskycore.primitive_ore_miner": "ɹǝuıW ǝɹO ǝʌıʇıɯıɹԀ",
   "itemGroup.gregitskycore.creative_tab": "ǝɹoƆʎʞsʇıbǝɹ⅁"
 }

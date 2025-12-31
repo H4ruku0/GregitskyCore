@@ -1,6 +1,5 @@
 package com.mrfrilled.gregitskycore.common.machine.multiblock.multi;
 
-import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 import com.mrfrilled.gregitskycore.common.machine.multiblock.steam.WeakSteamParallelMultiBlockMachine;
 
@@ -10,8 +9,8 @@ import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
-import com.gregtechceu.gtceu.common.data.GCYMBlocks;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
@@ -31,12 +30,17 @@ public class PrimitiveOreMiner {
                     .aisle("CCC", "DAD", "DAD", "DAD", " D ", " D ", " D ")
                     .aisle("CHC", " D ", " D ", " D ", "   ", "   ", "   ")
                     .where(' ', Predicates.any())
-                    .where('C', Predicates.blocks(GTBlocks.CASING_BRONZE_BRICKS.get()).setMinGlobalLimited(3).setPreviewCount(11)
-                            .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1).setPreviewCount(1))
+                    .where('C', Predicates.blocks(GTBlocks.CASING_BRONZE_BRICKS.get()).setMinGlobalLimited(3)
+                            .setPreviewCount(11)
+                            .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1)
+                                    .setPreviewCount(1))
                             .or(Predicates.abilities(PartAbility.STEAM).setMaxGlobalLimited(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(1).setPreviewCount(1)))
+                            .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1)
+                                    .setPreviewCount(1))
+                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(1)
+                                    .setPreviewCount(1))
+                            .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(1)
+                                    .setPreviewCount(1)))
                     .where('D', frames(GTMaterials.Bronze))
                     .where('A', Predicates.blocks(CASING_BRONZE_BRICKS.get()))
                     .where('H', Predicates.controller(Predicates.blocks(definition.get())))

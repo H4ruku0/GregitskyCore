@@ -1,7 +1,5 @@
 package com.mrfrilled.gregitskycore.common.machine;
 
-import com.google.common.collect.Tables;
-
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.*;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
@@ -34,14 +32,15 @@ import com.lowdragmc.lowdraglib.utils.Position;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.fluids.FluidType;
-import org.jetbrains.annotations.NotNull;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidType;
+
+import com.google.common.collect.Tables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.LinkedHashMap;
-
 
 public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIMachine, IExhaustVentMachine {
 
@@ -64,20 +63,19 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
         this.importItems = new NotifiableItemStackHandler(
                 this,
                 getRecipeType().getMaxInputs(ItemRecipeCapability.CAP),
-                IO.IN
-        );
+                IO.IN);
 
         this.exportItems = new NotifiableItemStackHandler(
                 this,
                 getRecipeType().getMaxOutputs(ItemRecipeCapability.CAP),
-                IO.OUT
-        );
+                IO.OUT);
 
         this.importFluids = new NotifiableFluidTank(
                 this,
                 getRecipeType().getMaxInputs(FluidRecipeCapability.CAP),
                 8 * FluidType.BUCKET_VOLUME,
                 IO.IN) {
+
             @Override
             public int fill(FluidStack resource, FluidAction action) {
                 // Rechaza steam, acepta otros fluidos
@@ -92,13 +90,13 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
                 this,
                 getRecipeType().getMaxOutputs(FluidRecipeCapability.CAP),
                 8 * FluidType.BUCKET_VOLUME,
-                IO.OUT
-        );
+                IO.OUT);
     }
 
     @Override
     protected NotifiableFluidTank createSteamTank(Object... args) {
         return new NotifiableFluidTank(this, 1, 16 * FluidType.BUCKET_VOLUME, IO.IN) {
+
             @Override
             public int fill(FluidStack resource, FluidAction action) {
                 // Solo acepta steam
@@ -117,9 +115,9 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
         // Vapor como energía
         addHandlerList(RecipeHandlerList.of(
                 IO.IN,
-                new SteamEnergyRecipeHandler(steamTank, isHighPressure() ? 2.0 : 1.0)
-        ));
+                new SteamEnergyRecipeHandler(steamTank, isHighPressure() ? 2.0 : 1.0)));
     }
+
     public static ModifierFunction recipeModifier(MetaMachine machine, GTRecipe recipe) {
         if (!(machine instanceof WeakSimpleSteamMachine steamMachine)) {
             return ModifierFunction.NULL;
@@ -146,7 +144,7 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
         checkVenting();
     }
 
-    ///  UI MACHINE ///
+    /// UI MACHINE ///
     @Override
     public ModularUI createUI(Player entityPlayer) {
         var storages = Tables.newCustomTable(new EnumMap<>(IO.class), LinkedHashMap<RecipeCapability<?>, Object>::new);
@@ -155,7 +153,6 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
 
         storages.put(IO.IN, FluidRecipeCapability.CAP, importFluids);
         storages.put(IO.OUT, FluidRecipeCapability.CAP, exportFluids);
-
 
         var group = getRecipeType().getRecipeUI().createUITemplate(recipeLogic::getProgressPercent,
                 storages,
@@ -178,7 +175,7 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
                         GuiTextures.SLOT_STEAM.get(isHighPressure), 7, 84, true));
     }
 
-    ///  VENT LOGIC ///
+    /// VENT LOGIC ///
     @Override
     public float getVentingDamage() {
         return isHighPressure() ? 12F : 6F;
@@ -196,9 +193,7 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
     }
 
     @Override
-    public void setNeedsVenting(boolean needsVenting) {
-
-    }
+    public void setNeedsVenting(boolean needsVenting) {}
 
     public void updateModelVentDirection() {
         MachineRenderState renderState = getRenderState();
@@ -248,5 +243,4 @@ public class WeakSimpleSteamMachine extends SteamWorkableMachine implements IUIM
     public double getConversionRate() {
         return isHighPressure() ? 2.0 : 1.0;
     }
-
 }

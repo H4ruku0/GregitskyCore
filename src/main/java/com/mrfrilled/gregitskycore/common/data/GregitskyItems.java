@@ -6,7 +6,7 @@ import static com.mrfrilled.gregitskycore.gregitskycore.GREGITSKY_CREATIVE_TAB;
 public class GregitskyItems {
 
     static {
-        REGISTRATE.creativeModeTab(()-> GREGITSKY_CREATIVE_TAB);
+        REGISTRATE.creativeModeTab(() -> GREGITSKY_CREATIVE_TAB);
     }
 
     public static void init() {}

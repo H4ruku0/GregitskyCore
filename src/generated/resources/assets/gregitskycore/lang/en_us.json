@@ -1,10 +1,17 @@
 {
   "block.gregitskycore.greenhouse": "Greenhouse",
+  "block.gregitskycore.hp_steam_latex_collector": "High Pressure Steam Latex Collector",
+  "block.gregitskycore.hp_steam_mixer": "High Pressure Steam Mixer",
   "block.gregitskycore.hp_steam_reaction_furnace": "High Pressure Steam Reaction Furnace",
   "block.gregitskycore.hp_steam_vulcanizer": "High Pressure Steam Vulcanizer",
   "block.gregitskycore.humidity_filter_casing": "Humidity Filter Casing",
+  "block.gregitskycore.hv_latex_collector": "§6Advanced Latex Collector II§r",
+  "block.gregitskycore.lp_steam_latex_collector": "Low Pressure Steam Latex Collector",
+  "block.gregitskycore.lp_steam_mixer": "Low Pressure Steam Mixer",
   "block.gregitskycore.lp_steam_reaction_furnace": "Low Pressure Steam Reaction Furnace",
   "block.gregitskycore.lp_steam_vulcanizer": "Low Pressure Steam Vulcanizer",
+  "block.gregitskycore.lv_latex_collector": "Basic Latex Collector §r",
+  "block.gregitskycore.mv_latex_collector": "§bAdvanced Latex Collector §r",
   "block.gregitskycore.primitive_ore_miner": "Primitive Ore Miner",
   "itemGroup.gregitskycore.creative_tab": "GregitskyCore"
 }

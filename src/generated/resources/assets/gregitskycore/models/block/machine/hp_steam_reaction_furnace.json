@@ -6,7 +6,11 @@
     {
       "apply": {
         "model": {
-          "parent": "gtceu:block/casings/steam/bricked_steel"
+          "parent": "gtceu:block/casings/steam/bricked_steel",
+          "textures": {
+            "overlay_front": "gtceu:block/machines/chemical_reactor/overlay_front",
+            "overlay_front_emissive": "gtceu:block/machines/chemical_reactor/overlay_front_emissive"
+          }
         }
       },
       "when": {
@@ -16,7 +20,11 @@
     {
       "apply": {
         "model": {
-          "parent": "gtceu:block/casings/steam/bricked_steel"
+          "parent": "gtceu:block/casings/steam/bricked_steel",
+          "textures": {
+            "overlay_front": "gtceu:block/machines/chemical_reactor/overlay_front_active",
+            "overlay_front_emissive": "gtceu:block/machines/chemical_reactor/overlay_front_active_emissive"
+          }
         }
       },
       "when": {
@@ -26,7 +34,11 @@
     {
       "apply": {
         "model": {
-          "parent": "gtceu:block/casings/steam/bricked_steel"
+          "parent": "gtceu:block/casings/steam/bricked_steel",
+          "textures": {
+            "overlay_front": "gtceu:block/machines/chemical_reactor/overlay_front_active",
+            "overlay_front_emissive": "gtceu:block/machines/chemical_reactor/overlay_front_active_emissive"
+          }
         }
       },
       "when": {
@@ -36,7 +48,11 @@
     {
       "apply": {
         "model": {
-          "parent": "gtceu:block/casings/steam/bricked_steel"
+          "parent": "gtceu:block/casings/steam/bricked_steel",
+          "textures": {
+            "overlay_front": "gtceu:block/machines/chemical_reactor/overlay_front",
+            "overlay_front_emissive": "gtceu:block/machines/chemical_reactor/overlay_front_emissive"
+          }
         }
       },
       "when": {

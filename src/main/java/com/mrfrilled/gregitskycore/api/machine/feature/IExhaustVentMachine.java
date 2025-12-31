@@ -24,7 +24,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 
 import org.jetbrains.annotations.NotNull;
 
-public interface  IExhaustVentMachine extends IMachineFeature {
+public interface IExhaustVentMachine extends IMachineFeature {
 
     EnumProperty<RelativeDirection> VENT_DIRECTION_PROPERTY = GTMachineModelProperties.VENT_DIRECTION;
 
@@ -177,5 +177,4 @@ public interface  IExhaustVentMachine extends IMachineFeature {
     default void playVentingSound(@NotNull Level level, double posX, double posY, double posZ) {
         level.playSound(null, posX, posY, posZ, SoundEvents.LAVA_EXTINGUISH, SoundSource.BLOCKS, 1F, 1F);
     }
-
 }

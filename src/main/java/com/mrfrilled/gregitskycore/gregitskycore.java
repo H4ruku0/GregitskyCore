@@ -1,7 +1,5 @@
 package com.mrfrilled.gregitskycore;
 
-import com.gregtechceu.gtceu.common.data.GTBlocks;
-import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.mrfrilled.gregitskycore.common.data.GregitskyItems;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
@@ -11,6 +9,7 @@ import com.mrfrilled.gregitskycore.common.machine.multiblock.multi.GreenHouse;
 import com.mrfrilled.gregitskycore.common.machine.multiblock.multi.PrimitiveOreMiner;
 import com.mrfrilled.gregitskycore.datagen.GregitskyDataGenerators;
 import com.mrfrilled.gregitskycore.datagen.lang.GregitskyLangHandler;
+import com.mrfrilled.gregitskycore.item.CustomItems;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -19,13 +18,11 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
+import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 
-import com.mrfrilled.gregitskycore.item.CustomItems;
-import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +32,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import com.tterrag.registrate.providers.ProviderType;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -53,7 +51,8 @@ public class gregitskycore {
     public static RegistryEntry<CreativeModeTab> GREGITSKY_CREATIVE_TAB = REGISTRATE
             .defaultCreativeTab(gregitskycore.MOD_ID,
                     builder -> builder
-                            .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(gregitskycore.MOD_ID, REGISTRATE))
+                            .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(gregitskycore.MOD_ID,
+                                    REGISTRATE))
                             .title(REGISTRATE.addLang("itemGroup", gregitskycore.id("creative_tab"), "GregitskyCore"))
                             .icon(GregitskyBlocks.HUMIDITY_FILTER_CASING::asStack)
                             .build())

@@ -1,17 +1,8 @@
 package com.mrfrilled.gregitskycore.common.data.recipes;
 
-import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
-import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
-import com.gregtechceu.gtceu.common.data.GTBlocks;
-import com.gregtechceu.gtceu.common.data.GTMachines;
-import com.gregtechceu.gtceu.common.data.GTMaterials;
-import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
-import com.mrfrilled.gregitskycore.common.machine.GregitskyMachines;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
@@ -45,11 +36,11 @@ public class MiscRecipeLoader {
                 'P', IRON_INGOT);
 
         /// SINGLEBLOCK ///
-        //VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_extractor_bronze",
-        //        STEAM_EXTRACTOR_TESTING.left().asStack(), "XXX", "PMG", "XXX",
-        //        'M', GTBlocks.BRONZE_HULL.asStack(),
-        //        'X', new MaterialEntry(TagPrefix.pipeSmallFluid, GTMaterials.Bronze), 'P', CustomTags.PISTONS,
-        //        'G', new ItemStack(Blocks.GLASS));
+        // VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_extractor_bronze",
+        // STEAM_EXTRACTOR_TESTING.left().asStack(), "XXX", "PMG", "XXX",
+        // 'M', GTBlocks.BRONZE_HULL.asStack(),
+        // 'X', new MaterialEntry(TagPrefix.pipeSmallFluid, GTMaterials.Bronze), 'P', CustomTags.PISTONS,
+        // 'G', new ItemStack(Blocks.GLASS));
         // ASSEMBLER_RECIPES.recipeBuilder("battery_hull_lv")
         // .inputItems(cableGtSingle, Tin)
         // .inputItems(plate, BatteryAlloy)
