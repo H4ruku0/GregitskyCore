@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gregitskycore:block/machine/ulv_reaction_furnace",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gregitskycore:block/machine/ulv_reaction_furnace"
+    },
+    "facing=south": {
+      "model": "gregitskycore:block/machine/ulv_reaction_furnace",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gregitskycore:block/machine/ulv_reaction_furnace",
+      "y": 270
+    }
+  }
+}

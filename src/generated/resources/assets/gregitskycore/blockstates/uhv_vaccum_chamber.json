@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gregitskycore:block/machine/uhv_vaccum_chamber",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gregitskycore:block/machine/uhv_vaccum_chamber"
+    },
+    "facing=south": {
+      "model": "gregitskycore:block/machine/uhv_vaccum_chamber",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gregitskycore:block/machine/uhv_vaccum_chamber",
+      "y": 270
+    }
+  }
+}

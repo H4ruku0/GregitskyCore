@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gregitskycore:block/machine/hv_vulcanizer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gregitskycore:block/machine/hv_vulcanizer"
+    },
+    "facing=south": {
+      "model": "gregitskycore:block/machine/hv_vulcanizer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gregitskycore:block/machine/hv_vulcanizer",
+      "y": 270
+    }
+  }
+}
