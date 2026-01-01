@@ -33,7 +33,7 @@ public class GregitskyMachines {
     public static final MachineDefinition[] LATEX_COLLECTOR = registerTieredMachines("latex_collector",
             (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
                     .langValue("%s Latex Collector %s".formatted(VLVH[tier], VLVT[tier]))
-                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("latex_collector"),
+                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(gregitskycore.id("latex_collector"),
                             GregitskyRecipeTypes.LATEX_COLLECTOR_RECIPES))
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GregitskyRecipeTypes.LATEX_COLLECTOR_RECIPES)
@@ -47,7 +47,7 @@ public class GregitskyMachines {
     public static final MachineDefinition[] VULCANIZER = registerTieredMachines("vulcanizer",
             (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
                     .langValue("%s Vulcanizer %s".formatted(VLVH[tier], VLVT[tier]))
-                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("vulcanizer"),
+                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(gregitskycore.id("vulcanizer"),
                             GregitskyRecipeTypes.VULCANIZER_RECIPES))
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GregitskyRecipeTypes.VULCANIZER_RECIPES)
@@ -60,7 +60,7 @@ public class GregitskyMachines {
     public static final MachineDefinition[] REACTION_FURNACE = registerTieredMachines("reaction_furnace",
             (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
                     .langValue("%s Reaction Furnace %s".formatted(VLVH[tier], VLVT[tier]))
-                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("reaction_furnace"),
+                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(gregitskycore.id("reaction_furnace"),
                             GregitskyRecipeTypes.REACTION_FURNACE_RECIPES))
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GregitskyRecipeTypes.REACTION_FURNACE_RECIPES)
@@ -74,7 +74,7 @@ public class GregitskyMachines {
     public static final MachineDefinition[] VACCUM_CHAMBER = registerTieredMachines("vaccum_chamber",
             (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
                     .langValue("%s Vaccum Chamber %s".formatted(VLVH[tier], VLVT[tier]))
-                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("vaccum_chamber"),
+                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(gregitskycore.id("vaccum_chamber"),
                             GregitskyRecipeTypes.VACCUM_CHAMBER_RECIPES))
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GregitskyRecipeTypes.VACCUM_CHAMBER_RECIPES)

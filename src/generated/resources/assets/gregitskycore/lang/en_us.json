@@ -44,5 +44,13 @@
   "block.gregitskycore.uxv_vaccum_chamber": "§eEpic Vaccum Chamber IV§r",
   "block.gregitskycore.zpm_reaction_furnace": "§cElite Reaction Furnace III§r",
   "block.gregitskycore.zpm_vaccum_chamber": "§cElite Vaccum Chamber III§r",
+  "gregitsky.multiblock.greenhouse_tooltip0": "§7This multiblock is capable of creating the perfect environment for growing plants all year round",
+  "gtceu.greenhouse": "Electric Greenhouse",
+  "gtceu.latex_collector": "Latex Collector",
+  "gtceu.primitive_ore_miner": "Primitive Ore Miner",
+  "gtceu.reaction_furnace": "Reaction Furnace",
+  "gtceu.steam_vaccum_chamber": "Vaccum Chamber",
+  "gtceu.vaccum_chamber": "Vaccum Chamber",
+  "gtceu.vulcanizer": "Vulcanizer",
   "itemGroup.gregitskycore.creative_tab": "GregitskyCore"
 }

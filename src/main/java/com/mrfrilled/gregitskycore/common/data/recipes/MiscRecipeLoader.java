@@ -7,8 +7,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import java.util.function.Consumer;
 
 import static com.mrfrilled.gregitskycore.common.machine.GregitskyMachines.*;
-import static com.mrfrilled.gregitskycore.common.machine.multiblock.multi.GreenHouse.GREENHOUSE;
-import static com.mrfrilled.gregitskycore.common.machine.multiblock.multi.PrimitiveOreMiner.PRIMITIVE_ORE_MINER;
+import static com.mrfrilled.gregitskycore.common.machine.GregitskyMultiMachines.*;
 import static net.minecraft.world.item.Items.*;
 
 public class MiscRecipeLoader {

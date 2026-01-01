@@ -5,8 +5,7 @@ import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
 import com.mrfrilled.gregitskycore.common.machine.GregitskyMachineUtils;
 import com.mrfrilled.gregitskycore.common.machine.GregitskyMachines;
-import com.mrfrilled.gregitskycore.common.machine.multiblock.multi.GreenHouse;
-import com.mrfrilled.gregitskycore.common.machine.multiblock.multi.PrimitiveOreMiner;
+import com.mrfrilled.gregitskycore.common.machine.GregitskyMultiMachines;
 import com.mrfrilled.gregitskycore.datagen.GregitskyDataGenerators;
 import com.mrfrilled.gregitskycore.datagen.lang.GregitskyLangHandler;
 import com.mrfrilled.gregitskycore.item.CustomItems;
@@ -160,10 +159,9 @@ public class gregitskycore {
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         // CustomMachines.init();
-        GreenHouse.init();
-        PrimitiveOreMiner.init();
         GregitskyMachines.init();
         GregitskyMachineUtils.init();
+        GregitskyMultiMachines.init();
     }
 
     /**

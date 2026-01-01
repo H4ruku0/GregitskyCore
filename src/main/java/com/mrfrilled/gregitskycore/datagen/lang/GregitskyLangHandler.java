@@ -2,9 +2,32 @@ package com.mrfrilled.gregitskycore.datagen.lang;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 
+import static com.gregtechceu.gtceu.data.lang.LangHandler.replace;
+
 public class GregitskyLangHandler {
 
-    public static void init(RegistrateLangProvider provider) {}
+    public static void init(RegistrateLangProvider provider) {
+
+
+        ///                          ///
+        /// Recipe types/ Categories ///
+        ///                          ///
+        //replace(provider, "gtceu.", "");
+        replace(provider, "gtceu.reaction_furnace", "Reaction Furnace");
+        replace(provider, "gtceu.vaccum_chamber", "Vaccum Chamber");
+        replace(provider, "gtceu.steam_vaccum_chamber", "Vaccum Chamber");
+        replace(provider, "gtceu.latex_collector", "Latex Collector");
+        replace(provider, "gtceu.vulcanizer", "Vulcanizer");
+        replace(provider, "gtceu.primitive_ore_miner", "Primitive Ore Miner");
+        replace(provider, "gtceu.greenhouse", "Electric Greenhouse");
+
+        ///         ///
+        /// Tooltip ///
+        ///         ///
+        //provider.add("", "");
+        replace(provider, "gregitsky.multiblock.greenhouse_tooltip0",
+                "§7This multiblock is capable of creating the perfect environment for growing plants all year round");
+    }
 
     protected static void multiLang(RegistrateLangProvider provider, String key, String... values) {
         for (var i = 0; i < values.length; i++) {
