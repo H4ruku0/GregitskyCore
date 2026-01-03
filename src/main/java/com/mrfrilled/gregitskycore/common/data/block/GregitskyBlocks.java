@@ -38,6 +38,9 @@ public class GregitskyBlocks {
     public static final BlockEntry<Block> HUMIDITY_FILTER_CASING = createSidedCasingBlock(
             "Humidity Filter Casing", "humidity_filter_casing",
             "casings/machine_casing_humidity_filter", BlockItem::new);
+    public static final BlockEntry<Block> REINFORCER_TREATED_WOOD_CASING = createSidedCasingBlock(
+            "Reinforced Treated Wood Casing", "reinforced_treated_wood_casing",
+            "casings/machine_casing_reinforced_treated_wood", BlockItem::new);
 
     public static void init() {}
 }

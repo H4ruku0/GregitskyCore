@@ -19,7 +19,6 @@ import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.defaultTankSizeFunction;
 import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.workableTiered;
 import static com.mrfrilled.gregitskycore.common.machine.GregitskyMachineUtils.*;
-import static com.mrfrilled.gregitskycore.common.machine.GregitskyMachineUtils.ALL_TIERS;
 import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry.REGISTRATE;
 
 public class GregitskyMachines {

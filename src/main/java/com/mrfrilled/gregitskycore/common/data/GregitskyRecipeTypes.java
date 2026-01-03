@@ -5,9 +5,7 @@ import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.common.data.GTSoundEntries;
 
-import com.gregtechceu.gtceu.data.recipe.builder.GTRecipeBuilder;
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
-import com.mrfrilled.gregitskycore.gregitskycore;
 
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 
@@ -21,25 +19,29 @@ public class GregitskyRecipeTypes {
     public static GTRecipeType LATEX_COLLECTOR_RECIPES;
     public static GTRecipeType STEAM_VACCUM_CHAMBER;
     public static GTRecipeType VACCUM_CHAMBER_RECIPES;
+    public static GTRecipeType COAGULATION_TANK_RECIPES;
 
     public static void init() {
         /// MULTIBLOCK ///
 
-        GREENHOUSE_RECIPES = register("greenhouse", MULTIBLOCK)
-                .setMaxIOSize(3, 4, 1, 0)
-                .setEUIO(IO.IN)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.BATH);
         // ANTIPROTONIC_RECIPES = register("antiprotonic", MULTIBLOCK)
         // .setMaxIOSize(3, 3, 1, 1)
         // .setEUIO(IO.IN)
         // .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
         // .setSound(GTSoundEntries.COOLING);
-
-        PRIMITIVE_ORE_MINER = register("primitive_ore_miner", MULTIBLOCK)
-                .setMaxIOSize(6, 9, 3, 3)
+        GREENHOUSE_RECIPES = register("greenhouse", MULTIBLOCK)
+                .setMaxIOSize(4, 6, 2, 2)
+                .setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.BATH);
+        PRIMITIVE_ORE_MINER = register("primitive_ore_miner", MULTIBLOCK)
+                .setMaxIOSize(4, 9, 2, 2)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.MINER);
+        COAGULATION_TANK_RECIPES = register("coagulation_tank", MULTIBLOCK)
+                .setMaxIOSize(2, 2, 1, 1)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.FURNACE);
 
         /// SINGLE-BLOCK ///
 
