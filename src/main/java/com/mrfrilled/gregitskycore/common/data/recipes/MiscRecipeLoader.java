@@ -8,28 +8,28 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
+import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
-import static com.mrfrilled.gregitskycore.common.machine.GregitskyMachines.*;
 import static com.mrfrilled.gregitskycore.common.machine.GregitskyMultiMachines.*;
-import static net.minecraft.world.item.Items.*;
 
 public class MiscRecipeLoader {
 
     public static void init(Consumer<FinishedRecipe> provider) {
-        GTMultiMachines_Recipes(provider);
+        GregitskyMultiMachinesRecipes(provider);
+        //GregitskyMachinesRecipes(provider);
 
         // if (GTCEu.Mods.isAE2Loaded()) {
         // createAE2Recipes(provider);
         // }
     }
 
-    private static void GTMultiMachines_Recipes(Consumer<FinishedRecipe> provider) {
-        /// CONTROLLERS ///
-        // ELECTRIC GREENHOUSE
+    private static void GregitskyMultiMachinesRecipes(Consumer<FinishedRecipe> provider) {
+
+        /// ELECTRIC GREENHOUSE
         VanillaRecipeHelper.addShapedRecipe(provider, "greenhouse", GREENHOUSE.asStack(),
                 "BCB", "BCB", "DAD",
                 'A', GTBlocks.CASING_STEEL_SOLID,
@@ -43,7 +43,7 @@ public class MiscRecipeLoader {
                 'B', Tags.Blocks.GLASS,
                 'C', GTItems.ELECTRIC_PUMP_LV,
                 'D', CustomTags.LV_CIRCUITS);
-        // PRIMITIVE ORE MINER
+        /// PRIMITIVE ORE MINER
         VanillaRecipeHelper.addShapedRecipe(provider, "primitive_ore_miner", PRIMITIVE_ORE_MINER.asStack(),
                 "BFB", "DED", "CAC",
                 'A', GTBlocks.BRONZE_HULL,
@@ -52,6 +52,20 @@ public class MiscRecipeLoader {
                 'D', new MaterialEntry(TagPrefix.frameGt, GTMaterials.Bronze),
                 'E', new MaterialEntry(TagPrefix.pipeLargeItem, GTMaterials.Tin),
                 'F', GTItems.ELECTRIC_PUMP_LV);
+        /// COAGULATION TANK
+        VanillaRecipeHelper.addShapedRecipe(provider, "coagulation_tank", COAGULATION_TANK.asStack(),
+                "ADA", "EBC", "AFA",
+                'A', GregitskyBlocks.REINFORCED_TREATED_WOOD_CASING,
+                'B', new MaterialEntry(TagPrefix.pipeLargeFluid, GTMaterials.TreatedWood),
+                'C', CustomTags.HAMMERS,
+                'D', new MaterialEntry(TagPrefix.rotor, GTMaterials.Steel),
+                'E', CustomTags.SAWS,
+                'F', new MaterialEntry(TagPrefix.bolt, GTMaterials.Steel));
+
+
+    }
+
+    private static void GregitskyMachinesRecipes (Consumer<FinishedRecipe> provider) {
 
         /// SINGLEBLOCK ///
         // VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_extractor_bronze",
@@ -66,5 +80,6 @@ public class MiscRecipeLoader {
         // .inputFluids(Polyethylene.getFluid(L))
         // .outputItems(BATTERY_HULL_LV)
         // .duration(400).EUt(1).save(provider);
+
     }
 }

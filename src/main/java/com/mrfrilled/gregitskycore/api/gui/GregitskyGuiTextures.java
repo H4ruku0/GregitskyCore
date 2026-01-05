@@ -1,6 +1,5 @@
 package com.mrfrilled.gregitskycore.api.gui;
 
-import com.lowdragmc.lowdraglib.gui.texture.ResourceBorderTexture;
 import com.lowdragmc.lowdraglib.gui.texture.ResourceTexture;
 
 @SuppressWarnings("unused")
@@ -11,5 +10,4 @@ public class GregitskyGuiTextures {
             "gregitskycore:textures/gui/progress_bar/progress_bar_primitive_bubbles");
 
     // GUI
-
 }

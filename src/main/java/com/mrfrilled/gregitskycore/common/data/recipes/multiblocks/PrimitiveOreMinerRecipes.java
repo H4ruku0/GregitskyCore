@@ -1,6 +1,6 @@
-package com.mrfrilled.gregitskycore.common.data.recipes;
+package com.mrfrilled.gregitskycore.common.data.recipes.multiblocks;
 
-public class PRIMITIVE_ORE_MINER_RECIPES {
+public class PrimitiveOreMinerRecipes {
 
     // public static void init(Consumer<FinishedRecipe> provider) {
     // register(provider);

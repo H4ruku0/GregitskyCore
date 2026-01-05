@@ -22,5 +22,4 @@ public class GregitskyMaterialRegistry {
     public static Material getMaterial(Fluid fluid) {
         return FLUID_TO_MATERIAL.get(fluid);
     }
-
 }

@@ -2,8 +2,8 @@ package com.mrfrilled.gregitskycore.common.machine;
 
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
-import com.mrfrilled.gregitskycore.common.machine.multiblock.steam.WeakSteamParallelMultiBlockMachine;
 import com.mrfrilled.gregitskycore.common.machine.multiblock.primitive.CoagulationTankMachine;
+import com.mrfrilled.gregitskycore.common.machine.multiblock.steam.WeakSteamParallelMultiBlockMachine;
 import com.mrfrilled.gregitskycore.gregitskycore;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -68,7 +68,7 @@ public class GregitskyMultiMachines {
             .register();
     /// PRIMITIVE GREENHOUSE
     public static final MultiblockMachineDefinition PRIMITIVE_GREENHOUSE = REGISTRATE
-            .multiblock("primitive_greenhouse", WorkableElectricMultiblockMachine::new)
+            .multiblock("primitive_greenhouse", WeakSteamParallelMultiBlockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .tooltips(Component.translatable("gregitsky.multiblock.primitive_greenhouse_tooltip0"))
             .recipeType(GregitskyRecipeTypes.GREENHOUSE_RECIPES)
@@ -135,24 +135,27 @@ public class GregitskyMultiMachines {
                     GTCEu.id("block/multiblock/implosion_compressor"))
             .register();
 
-        ///  COAGULATION TANK
+    /// COAGULATION TANK
     public static final MultiblockMachineDefinition COAGULATION_TANK = REGISTRATE
             .multiblock("coagulation_tank", CoagulationTankMachine::new)
-            .langValue("Coagulation Tank").tooltips(Component.translatable("gregitsky.multiblock.coagulation_tank_tooltip0"))
+            .langValue("Coagulation Tank")
+            .tooltips(Component.translatable("gregitsky.multiblock.coagulation_tank_tooltip0"))
             .rotationState(RotationState.ALL)
             .recipeType(GregitskyRecipeTypes.COAGULATION_TANK_RECIPES)
-            .appearanceBlock(GregitskyBlocks.REINFORCER_TREATED_WOOD_CASING)
+            .appearanceBlock(GregitskyBlocks.REINFORCED_TREATED_WOOD_CASING)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("CCC", "CCC", "CCC")
                     .aisle("CCC", "C C", "CCC")
                     .aisle("CCC", "CHC", "CCC")
                     .where(' ', Predicates.any())
-                    .where('C', Predicates.blocks(GregitskyBlocks.REINFORCER_TREATED_WOOD_CASING.get()).setMinGlobalLimited(23)
-                            .setPreviewCount(27)
-                            .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
-                            .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1))
-                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(1))
-                            .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(1)))
+                    .where('C',
+                            Predicates.blocks(GregitskyBlocks.REINFORCED_TREATED_WOOD_CASING.get())
+                                    .setMinGlobalLimited(23)
+                                    .setPreviewCount(27)
+                                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
+                                    .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1))
+                                    .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(1))
+                                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(1)))
                     .where('H', Predicates.controller(Predicates.blocks(definition.get())))
                     .build())
             .workableCasingModel(gregitskycore.id("block/casings/machine_casing_reinforced_treated_wood"),

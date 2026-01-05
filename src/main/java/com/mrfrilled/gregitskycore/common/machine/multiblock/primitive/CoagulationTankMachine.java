@@ -59,8 +59,7 @@ public class CoagulationTankMachine extends PrimitiveWorkableMachine implements 
                 getRecipeType().getMaxInputs(FluidRecipeCapability.CAP),
                 8000, // capacidad por tanque (8 buckets es estándar)
                 IO.IN,
-                IO.NONE
-        );
+                IO.NONE);
     }
 
     @Override
@@ -70,42 +69,46 @@ public class CoagulationTankMachine extends PrimitiveWorkableMachine implements 
                 getRecipeType().getMaxOutputs(FluidRecipeCapability.CAP),
                 8000,
                 IO.OUT,
-                IO.NONE
-        );
+                IO.NONE);
     }
-
 
     @Override
     public ModularUI createUI(Player entityPlayer) {
         return new ModularUI(176, 166, this, entityPlayer)
                 .background(GuiTextures.PRIMITIVE_BACKGROUND)
                 .widget(new LabelWidget(5, 5, getBlockState().getBlock().getDescriptionId()))
-                .widget(new SlotWidget(importItems.storage, 0, 52, 20, true, true)
+                .widget(new SlotWidget(importItems.storage, 0, 34, 24, true, true)
                         .setBackgroundTexture(
                                 new GuiTextureGroup(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_DUST_OVERLAY)))
-                .widget(new SlotWidget(importItems.storage, 1, 52, 38, true, true)
+                .widget(new SlotWidget(importItems.storage, 1, 52, 24, true, true)
                         .setBackgroundTexture(
                                 new GuiTextureGroup(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_DUST_OVERLAY)))
-                .widget(new TankWidget(importFluids.getStorages()[0], 52,  56, 18, 18, true, true)
+                .widget(new TankWidget(importFluids.getStorages()[0], 34, 42, 18, 18, true, true)
+                        .setBackground(GuiTextures.PRIMITIVE_LARGE_FLUID_TANK)
+                        .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
+                        .setShowAmountOverlay(false))
+                .widget(new TankWidget(importFluids.getStorages()[1], 52, 42, 18, 18, true, true)
                         .setBackground(GuiTextures.PRIMITIVE_LARGE_FLUID_TANK)
                         .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
                         .setShowAmountOverlay(false))
                 .widget(new ProgressWidget(recipeLogic::getProgressPercent, 77, 39, 20, 15,
                         GuiTextures.PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR))
-                .widget(new SlotWidget(exportItems.storage, 0, 104, 38, true, false)
+                .widget(new SlotWidget(exportItems.storage, 0, 104, 24, true, false)
                         .setBackgroundTexture(
                                 new GuiTextureGroup(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_DUST_OVERLAY)))
-                .widget(new SlotWidget(exportItems.storage, 1, 122, 38, true, false)
+                .widget(new SlotWidget(exportItems.storage, 1, 122, 24, true, false)
                         .setBackgroundTexture(
                                 new GuiTextureGroup(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_DUST_OVERLAY)))
-                .widget(new TankWidget(exportFluids.getStorages()[0], 140, 38, 18, 18, true, false)
+                .widget(new TankWidget(exportFluids.getStorages()[0], 104, 42, 18, 18, true, false)
                         .setBackground(GuiTextures.PRIMITIVE_LARGE_FLUID_TANK)
                         .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
                         .setShowAmountOverlay(false))
-                        //.setOverlay(GuiTextures.PRIMITIVE_LARGE_FLUID_TANK_OVERLAY))
+                .widget(new TankWidget(exportFluids.getStorages()[1], 122, 42, 18, 18, true, false)
+                        .setBackground(GuiTextures.PRIMITIVE_LARGE_FLUID_TANK)
+                        .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
+                        .setShowAmountOverlay(false))
+                // .setOverlay(GuiTextures.PRIMITIVE_LARGE_FLUID_TANK_OVERLAY))
                 .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(),
                         GuiTextures.PRIMITIVE_SLOT, 7, 84, true));
     }
-
-
 }

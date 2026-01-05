@@ -45,7 +45,7 @@ public class GregitskyCoreGTAddon implements IGTAddon {
     @Override
     public void registerElements() {
         IGTAddon.super.registerElements();
-        //GregitskyElements.init();
+        // GregitskyElements.init();
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.

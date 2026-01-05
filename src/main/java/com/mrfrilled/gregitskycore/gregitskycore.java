@@ -54,7 +54,7 @@ public class gregitskycore {
                             .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(gregitskycore.MOD_ID,
                                     REGISTRATE))
                             .title(REGISTRATE.addLang("itemGroup", gregitskycore.id("creative_tab"), "GregitskyCore"))
-                            .icon(GregitskyBlocks.REINFORCER_TREATED_WOOD_CASING::asStack)
+                            .icon(GregitskyBlocks.REINFORCED_TREATED_WOOD_CASING::asStack)
                             .build())
             .register();
 

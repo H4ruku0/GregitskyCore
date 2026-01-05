@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class PrimitiveWorkableMachine extends WorkableMultiblockMachine
-        implements IMachineLife, IEnvironmentalHazardEmitter {
+                                      implements IMachineLife, IEnvironmentalHazardEmitter {
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
             PrimitiveWorkableMachine.class, WorkableMultiblockMachine.MANAGED_FIELD_HOLDER);
@@ -85,5 +85,4 @@ public class PrimitiveWorkableMachine extends WorkableMultiblockMachine
         super.afterWorking();
         spreadEnvironmentalHazard();
     }
-
 }
