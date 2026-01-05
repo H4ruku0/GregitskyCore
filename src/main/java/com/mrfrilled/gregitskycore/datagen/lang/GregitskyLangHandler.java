@@ -12,8 +12,8 @@ public class GregitskyLangHandler {
         /// ///
         // replace(provider, "gtceu.", "");
         replace(provider, "gtceu.reaction_furnace", "Reaction Furnace");
-        replace(provider, "gtceu.vaccum_chamber", "Vaccum Chamber");
-        replace(provider, "gtceu.steam_vaccum_chamber", "Vaccum Chamber");
+        replace(provider, "gtceu.vacuum_chamber", "Vacuum Chamber");
+        replace(provider, "gtceu.steam_vacuum_chamber", "Vacuum Chamber");
         replace(provider, "gtceu.latex_collector", "Latex Collector");
         replace(provider, "gtceu.vulcanizer", "Vulcanizer");
         replace(provider, "gtceu.primitive_ore_miner", "Primitive Ore Miner");

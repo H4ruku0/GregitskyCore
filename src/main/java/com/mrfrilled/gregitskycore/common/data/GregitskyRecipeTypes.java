@@ -17,8 +17,8 @@ public class GregitskyRecipeTypes {
     public static GTRecipeType REACTION_FURNACE_RECIPES;
     public static GTRecipeType VULCANIZER_RECIPES;
     public static GTRecipeType LATEX_COLLECTOR_RECIPES;
-    public static GTRecipeType STEAM_VACCUM_CHAMBER;
-    public static GTRecipeType VACCUM_CHAMBER_RECIPES;
+    public static GTRecipeType STEAM_VACUUM_CHAMBER;
+    public static GTRecipeType VACUUM_CHAMBER_RECIPES;
     public static GTRecipeType COAGULATION_TANK_RECIPES;
 
     public static void init() {
@@ -60,12 +60,12 @@ public class GregitskyRecipeTypes {
                 .setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.FURNACE);
-        STEAM_VACCUM_CHAMBER = register("steam_vaccum_chamber", ELECTRIC)
+        STEAM_VACUUM_CHAMBER = register("steam_vacuum_chamber", ELECTRIC)
                 .setMaxIOSize(4, 2, 0, 0)
                 .setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.COOLING);
-        VACCUM_CHAMBER_RECIPES = register("vaccum_chamber", ELECTRIC)
+        VACUUM_CHAMBER_RECIPES = register("vacuum_chamber", ELECTRIC)
                 .setMaxIOSize(4, 2, 2, 0)
                 .setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)

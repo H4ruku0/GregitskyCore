@@ -42,6 +42,12 @@ public class GregitskyCoreGTAddon implements IGTAddon {
         GregitskyRecipes.init(provider);
     }
 
+    @Override
+    public void registerElements() {
+        IGTAddon.super.registerElements();
+        //GregitskyElements.init();
+    }
+
     // If you have custom ingredient types, uncomment this & change to match your capability.
     // KubeJS WILL REMOVE YOUR RECIPES IF THESE ARE NOT REGISTERED.
     /*

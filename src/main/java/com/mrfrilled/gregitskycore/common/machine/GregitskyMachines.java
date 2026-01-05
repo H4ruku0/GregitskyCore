@@ -55,7 +55,7 @@ public class GregitskyMachines {
                     .tooltips(workableTiered(tier, GTValues.V[tier], GTValues.V[tier] * 64,
                             GregitskyRecipeTypes.VULCANIZER_RECIPES, defaultTankSizeFunction.applyAsInt(tier), true))
                     .register(),
-            LV, MV, HV);
+            LV, MV, HV, EV);
     public static final MachineDefinition[] REACTION_FURNACE = registerTieredMachines("reaction_furnace",
             (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
                     .langValue("%s Reaction Furnace %s".formatted(VLVH[tier], VLVT[tier]))
@@ -70,17 +70,17 @@ public class GregitskyMachines {
                             true))
                     .register(),
             ELECTRIC_TIERS);
-    public static final MachineDefinition[] VACCUM_CHAMBER = registerTieredMachines("vaccum_chamber",
+    public static final MachineDefinition[] VACUUM_CHAMBER = registerTieredMachines("vacuum_chamber",
             (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
-                    .langValue("%s Vaccum Chamber %s".formatted(VLVH[tier], VLVT[tier]))
-                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(gregitskycore.id("vaccum_chamber"),
-                            GregitskyRecipeTypes.VACCUM_CHAMBER_RECIPES))
+                    .langValue("%s Vacuum Chamber %s".formatted(VLVH[tier], VLVT[tier]))
+                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(gregitskycore.id("vacuum_chamber"),
+                            GregitskyRecipeTypes.VACUUM_CHAMBER_RECIPES))
                     .rotationState(RotationState.NON_Y_AXIS)
-                    .recipeType(GregitskyRecipeTypes.VACCUM_CHAMBER_RECIPES)
+                    .recipeType(GregitskyRecipeTypes.VACUUM_CHAMBER_RECIPES)
                     .recipeModifier(GTRecipeModifiers.OC_NON_PERFECT)
-                    .workableTieredHullModel(GTCEu.id("block/machines/air_scrubber"))
+                    .workableTieredHullModel(GTCEu.id("block/machines/gas_collector"))
                     .tooltips(workableTiered(tier, GTValues.V[tier], GTValues.V[tier] * 64,
-                            GregitskyRecipeTypes.VACCUM_CHAMBER_RECIPES, defaultTankSizeFunction.applyAsInt(tier),
+                            GregitskyRecipeTypes.VACUUM_CHAMBER_RECIPES, defaultTankSizeFunction.applyAsInt(tier),
                             true))
                     .register(),
             ELECTRIC_TIERS);
@@ -123,13 +123,13 @@ public class GregitskyMachines {
                     .modelProperty(GTMachineModelProperties.VENT_DIRECTION, RelativeDirection.BACK)
                     .workableSteamHullModel(pressure, GTCEu.id("block/machines/air_scrubber"))
                     .register());
-    public static final Pair<MachineDefinition, MachineDefinition> STEAM_VACCUM_CHAMBER = registerSteamMachines(
-            "steam_vaccum_chamber", WeakSimpleSteamMachine::new, (pressure, builder) -> builder
+    public static final Pair<MachineDefinition, MachineDefinition> STEAM_VACUUM_CHAMBER = registerSteamMachines(
+            "steam_vacuum_chamber", WeakSimpleSteamMachine::new, (pressure, builder) -> builder
                     .rotationState(RotationState.NON_Y_AXIS)
-                    .recipeType(GregitskyRecipeTypes.STEAM_VACCUM_CHAMBER)
+                    .recipeType(GregitskyRecipeTypes.STEAM_VACUUM_CHAMBER)
                     .recipeModifier(WeakSimpleSteamMachine::recipeModifier)
                     .modelProperty(GTMachineModelProperties.VENT_DIRECTION, RelativeDirection.BACK)
-                    .workableSteamHullModel(pressure, GTCEu.id("block/machines/air_scrubber"))
+                    .workableSteamHullModel(pressure, GTCEu.id("block/machines/gas_collector"))
                     .register());
 
     public static void init() {}

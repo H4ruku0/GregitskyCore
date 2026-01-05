@@ -3,6 +3,7 @@ package com.mrfrilled.gregitskycore;
 import com.mrfrilled.gregitskycore.common.data.GregitskyItems;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
+import com.mrfrilled.gregitskycore.common.data.materials.GregitskyMaterials;
 import com.mrfrilled.gregitskycore.common.machine.GregitskyMachineUtils;
 import com.mrfrilled.gregitskycore.common.machine.GregitskyMachines;
 import com.mrfrilled.gregitskycore.common.machine.GregitskyMultiMachines;
@@ -53,7 +54,7 @@ public class gregitskycore {
                             .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(gregitskycore.MOD_ID,
                                     REGISTRATE))
                             .title(REGISTRATE.addLang("itemGroup", gregitskycore.id("creative_tab"), "GregitskyCore"))
-                            .icon(GregitskyBlocks.HUMIDITY_FILTER_CASING::asStack)
+                            .icon(GregitskyBlocks.REINFORCER_TREATED_WOOD_CASING::asStack)
                             .build())
             .register();
 
@@ -66,7 +67,6 @@ public class gregitskycore {
         GregitskyDataGenerators.init();
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
         CustomItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
@@ -128,7 +128,8 @@ public class gregitskycore {
      * @param event
      */
     private void addMaterials(MaterialEvent event) {
-        // CustomMaterials.init();
+        GregitskyMaterials.register();
+        GregitskyMaterials.init();
     }
 
     /**
