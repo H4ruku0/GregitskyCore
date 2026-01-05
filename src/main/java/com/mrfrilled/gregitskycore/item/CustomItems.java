@@ -13,6 +13,10 @@ import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry.REGI
 
 public class CustomItems {
 
+    static {
+        REGISTRATE.creativeModeTab(() -> gregitskycore.GREGITSKY_CREATIVE_TAB);
+    }
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
             gregitskycore.MOD_ID);
 
