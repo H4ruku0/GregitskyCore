@@ -24,8 +24,6 @@ public class CustomItems {
             .item("gregitsky_logo", Item::new)
             .register();
 
-
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

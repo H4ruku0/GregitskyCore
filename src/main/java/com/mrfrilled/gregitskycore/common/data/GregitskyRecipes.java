@@ -1,10 +1,10 @@
 package com.mrfrilled.gregitskycore.common.data;
 
 import com.mrfrilled.gregitskycore.common.data.recipes.*;
-
 import com.mrfrilled.gregitskycore.common.data.recipes.multiblocks.CoagulationTankRecipes;
 import com.mrfrilled.gregitskycore.common.data.recipes.multiblocks.GreenhouseRecipes;
 import com.mrfrilled.gregitskycore.common.data.recipes.singleblock.LatexCollectorRecipes;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -18,6 +18,5 @@ public class GregitskyRecipes {
         CoagulationTankRecipes.init(provider);
         LatexCollectorRecipes.init(provider);
         BlocksRecipes.init(provider);
-
     }
 }

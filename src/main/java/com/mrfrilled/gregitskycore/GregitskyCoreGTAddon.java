@@ -2,6 +2,7 @@ package com.mrfrilled.gregitskycore;
 
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipes;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
+import com.mrfrilled.gregitskycore.common.data.materials.GregitskyElements;
 import com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
@@ -45,7 +46,7 @@ public class GregitskyCoreGTAddon implements IGTAddon {
     @Override
     public void registerElements() {
         IGTAddon.super.registerElements();
-        // GregitskyElements.init();
+        GregitskyElements.init();
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.

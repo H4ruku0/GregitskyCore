@@ -1,5 +1,7 @@
 package com.mrfrilled.gregitskycore.common.data.recipes;
 
+import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
+
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
@@ -8,7 +10,6 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
-import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraftforge.common.Tags;
 
@@ -20,7 +21,7 @@ public class MiscRecipeLoader {
 
     public static void init(Consumer<FinishedRecipe> provider) {
         GregitskyMultiMachinesRecipes(provider);
-        //GregitskyMachinesRecipes(provider);
+        // GregitskyMachinesRecipes(provider);
 
         // if (GTCEu.Mods.isAE2Loaded()) {
         // createAE2Recipes(provider);
@@ -28,7 +29,6 @@ public class MiscRecipeLoader {
     }
 
     private static void GregitskyMultiMachinesRecipes(Consumer<FinishedRecipe> provider) {
-
         /// ELECTRIC GREENHOUSE
         VanillaRecipeHelper.addShapedRecipe(provider, "greenhouse", GREENHOUSE.asStack(),
                 "BCB", "BCB", "DAD",
@@ -61,12 +61,9 @@ public class MiscRecipeLoader {
                 'D', new MaterialEntry(TagPrefix.rotor, GTMaterials.Steel),
                 'E', CustomTags.SAWS,
                 'F', new MaterialEntry(TagPrefix.bolt, GTMaterials.Steel));
-
-
     }
 
-    private static void GregitskyMachinesRecipes (Consumer<FinishedRecipe> provider) {
-
+    private static void GregitskyMachinesRecipes(Consumer<FinishedRecipe> provider) {
         /// SINGLEBLOCK ///
         // VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_extractor_bronze",
         // STEAM_EXTRACTOR_TESTING.left().asStack(), "XXX", "PMG", "XXX",
@@ -80,6 +77,5 @@ public class MiscRecipeLoader {
         // .inputFluids(Polyethylene.getFluid(L))
         // .outputItems(BATTERY_HULL_LV)
         // .duration(400).EUt(1).save(provider);
-
     }
 }

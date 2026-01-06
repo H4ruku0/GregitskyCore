@@ -61,5 +61,9 @@
   "gtceu.vulcanizer": "Vulcanizer",
   "item.gregitskycore.gregitsky_logo": "Gregitsky Logo",
   "itemGroup.gregitskycore.creative_tab": "GregitskyCore",
-  "material.gregitskycore.latex": "Latex"
+  "material.gregitskycore.cobalt_matte": "Cobalt Matte",
+  "material.gregitskycore.high_purity_carbon": "High Purity Carbon",
+  "material.gregitskycore.latex": "Latex",
+  "material.gregitskycore.pig_iron": "Pig Iron",
+  "material.gregitskycore.unknown": "Unknown"
 }

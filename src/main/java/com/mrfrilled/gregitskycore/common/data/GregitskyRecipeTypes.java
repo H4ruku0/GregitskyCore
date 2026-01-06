@@ -6,10 +6,11 @@ import com.gregtechceu.gtceu.api.gui.widget.SlotWidget;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.recipe.RecipeCondition;
 import com.gregtechceu.gtceu.common.data.GTSoundEntries;
-
 import com.gregtechceu.gtceu.common.recipe.condition.AdjacentBlockCondition;
 import com.gregtechceu.gtceu.integration.xei.handlers.item.CycleItemStackHandler;
+
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
+
 import net.minecraft.core.HolderSet;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -80,9 +81,7 @@ public class GregitskyRecipeTypes {
                             List<ItemStack> stacks = new ArrayList<>();
 
                             for (HolderSet<Block> set : adjacent.getBlocks()) {
-                                set.forEach(holder ->
-                                        stacks.add(new ItemStack(holder.value()))
-                                );
+                                set.forEach(holder -> stacks.add(new ItemStack(holder.value())));
                             }
 
                             if (!stacks.isEmpty()) {
@@ -99,8 +98,7 @@ public class GregitskyRecipeTypes {
                             widgetGroup.getSize().width - 52,
                             widgetGroup.getSize().height - 32,
                             false,
-                            false
-                    ));
+                            false));
                 })
                 .setSound(GTSoundEntries.FURNACE);
         STEAM_VACUUM_CHAMBER = register("steam_vacuum_chamber", ELECTRIC)
