@@ -78,6 +78,7 @@ public class GregitskyMaterials {
                 .dust()
                 .components(GTMaterials.Calcium, 1, GTMaterials.Carbon, 1, GTMaterials.Oxygen, 3)
                 .formula("CaCO3")
+                .flags(DISABLE_MATERIAL_RECIPES)
                 .color(0xb7ad95).secondaryColor(0xbeb8a8)
                 .iconSet(ROUGH)
                 .buildAndRegister();
@@ -103,7 +104,7 @@ public class GregitskyMaterials {
         CalcinedClay = new Material.Builder(
                 gregitskycore.id("calcined_clay"))
                 .langValue("Calcined Clay")
-                .ingot()
+                .dust()
                 .components(Sodium, 2, Lithium, 1, Aluminium, 2, Silicon, 2, Oxygen, 6)
                 .formula("Na2LiAl2Si2O6")
                 .flags(DISABLE_DECOMPOSITION)

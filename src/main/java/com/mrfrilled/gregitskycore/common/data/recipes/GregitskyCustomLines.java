@@ -34,7 +34,7 @@ public class GregitskyCustomLines {
                 .EUt(GTValues.VA[GTValues.LV])
                 .duration(20 * 7).save(provider);
         REACTION_FURNACE_RECIPES.recipeBuilder("anorthite_naoh_attack")
-                .inputItems(TagPrefix.dust, Anorthite, 4)
+                .inputItems(TagPrefix.gem, Anorthite, 4)
                 .inputItems(TagPrefix.dust, SodiumHydroxide, 2)
                 .outputFluids(SodiumAluminateSolution.getFluid(2000))
                 .outputFluids(Water.getFluid(1000))
@@ -50,20 +50,18 @@ public class GregitskyCustomLines {
                 .outputItems(TagPrefix.dust, AluminiumHydroxide, 2)
                 .EUt(GTValues.VA[GTValues.LV])
                 .duration(20 * 30).save(provider);
-        PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder("anorthite_calcination_pbf")
-                .inputItems(TagPrefix.dust, AluminiumHydroxide, 8)
-                .outputItems(TagPrefix.dust, Alumina, 4)
-                .duration(20 * 60).save(provider);
         BLAST_RECIPES.recipeBuilder("anorthite_calcination_ebf")
                 .inputItems(TagPrefix.dust, AluminiumHydroxide, 8)
                 .outputItems(TagPrefix.dust, Alumina, 4)
+                .blastFurnaceTemp(1000)
                 .EUt(GTValues.VA[GTValues.LV])
                 .duration(20 * 45).save(provider);
-        BLAST_RECIPES.recipeBuilder("anorthite_calcination_ebf")
+        BLAST_RECIPES.recipeBuilder("aluminium_from_alumina")
                 .inputItems(TagPrefix.dust, Alumina, 1)
                 .inputItems(TagPrefix.dust, Carbon, 1)
                 .outputItems(TagPrefix.ingot, Aluminium, 2)
                 .outputFluids(CarbonTrioxide.getFluid(1000))
+                .blastFurnaceTemp(1600)
                 .EUt(GTValues.VA[GTValues.MV])
                 .duration(20 * 60).save(provider);
     }
