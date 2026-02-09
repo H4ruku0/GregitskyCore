@@ -16,11 +16,11 @@ import java.util.Map;
 @Mixin(RecipeManager.class)
 public class RecipeRemovalMixin {
 
-    @Inject(
-            method = "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
-            at = @At("HEAD"))
-    private void removeRecipes(Map<ResourceLocation, JsonElement> map, ResourceManager resourceManager,
-                               ProfilerFiller profiler, CallbackInfo ci) {
+    @Inject(method = "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
+            at = @At("HEAD"),
+            remap = true)
+    protected void removeRecipes(Map<ResourceLocation, JsonElement> map, ResourceManager resourceManager,
+                                 ProfilerFiller profiler, CallbackInfo ci) {
         /// --- AQUÍ BORRAS TUS RECETAS --- ///
 
         // Removing with id
