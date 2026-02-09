@@ -72,20 +72,25 @@ public class GregitskyRecipeTypes {
                 .setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setUiBuilder((recipe, widgetGroup) -> {
-
                     List<List<ItemStack>> items = new ArrayList<>();
 
-                    for (RecipeCondition condition : recipe.conditions) {
+                    for (RecipeCondition<?> condition : recipe.conditions) {
                         if (condition instanceof AdjacentBlockCondition adjacent) {
 
-                            List<ItemStack> stacks = new ArrayList<>();
+                            List<HolderSet<Block>> allBlockSets = adjacent.getOrInitBlocks(recipe);
 
-                            for (HolderSet<Block> set : adjacent.getBlocks()) {
-                                set.forEach(holder -> stacks.add(new ItemStack(holder.value())));
-                            }
+                            if (allBlockSets != null) {
+                                for (HolderSet<Block> set : allBlockSets) {
+                                    List<ItemStack> stacks = new ArrayList<>();
 
-                            if (!stacks.isEmpty()) {
-                                items.add(stacks);
+                                    set.forEach(holder -> {
+                                        stacks.add(new ItemStack(holder.value()));
+                                    });
+
+                                    if (!stacks.isEmpty()) {
+                                        items.add(stacks);
+                                    }
+                                }
                             }
                         }
                     }

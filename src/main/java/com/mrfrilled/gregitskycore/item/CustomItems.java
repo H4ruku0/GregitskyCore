@@ -7,8 +7,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import com.tterrag.registrate.util.entry.ItemEntry;
-
 import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry.REGISTRATE;
 
 public class CustomItems {
@@ -20,9 +18,9 @@ public class CustomItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
             gregitskycore.MOD_ID);
 
-    //public static final ItemEntry<Item> GREGITSKY_LOGO = REGISTRATE
-    //        .item("gregitsky_logo", Item::new)
-    //        .register();
+    // public static final ItemEntry<Item> GREGITSKY_LOGO = REGISTRATE
+    // .item("gregitsky_logo", Item::new)
+    // .register();
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

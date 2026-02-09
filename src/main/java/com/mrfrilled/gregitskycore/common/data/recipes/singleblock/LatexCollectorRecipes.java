@@ -20,12 +20,12 @@ public class LatexCollectorRecipes {
     private static void LatexCollection(Consumer<FinishedRecipe> provider) {
         LATEX_COLLECTOR_RECIPES.recipeBuilder("extracting_latex_with_water")
                 .notConsumableFluid(Water.getFluid(25))
-                .adjacentBlock(GTBlocks.RUBBER_LOG.get())
+                .adjacentBlocks(GTBlocks.RUBBER_LOG.get())
                 .outputFluids(GregitskyMaterials.Latex.getFluid(100))
                 .duration(20 * 2).EUt(7).save(provider);
         LATEX_COLLECTOR_RECIPES.recipeBuilder("extracting_latex_with_distwater")
                 .notConsumableFluid(DistilledWater.getFluid(100))
-                .adjacentBlock(GTBlocks.RUBBER_LOG.get())
+                .adjacentBlocks(GTBlocks.RUBBER_LOG.get())
                 .outputFluids(GregitskyMaterials.Latex.getFluid(125))
                 .duration(20 * 2).EUt(7).save(provider);
     }

@@ -1,6 +1,5 @@
 package com.mrfrilled.gregitskycore.common.data.materials;
 
-import com.gregtechceu.gtceu.api.GTValues;
 import com.mrfrilled.gregitskycore.gregitskycore;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
@@ -145,7 +144,7 @@ public class GregitskyMaterials {
                 gregitskycore.id("alumina"))
                 .langValue("Alumina")
                 .dust()
-                //.blastTemp(1200, LOW, GTValues.VA[GTValues.MV], 20*60)
+                // .blastTemp(1200, LOW, GTValues.VA[GTValues.MV], 20*60)
                 .components(Aluminium, 2, Oxygen, 3)
                 .formula("Al2O3")
                 .flags(DISABLE_DECOMPOSITION)

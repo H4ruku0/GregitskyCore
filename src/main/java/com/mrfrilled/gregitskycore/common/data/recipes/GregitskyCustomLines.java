@@ -2,6 +2,7 @@ package com.mrfrilled.gregitskycore.common.data.recipes;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -12,12 +13,13 @@ import static com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes.*;
 import static com.mrfrilled.gregitskycore.common.data.materials.GregitskyMaterials.*;
 
 public class GregitskyCustomLines {
+
     public static void init(Consumer<FinishedRecipe> provider) {
         AnorthiteLine(provider); // For Aluminium in LV
     }
 
     private static void AnorthiteLine(Consumer<FinishedRecipe> provider) {
-        ///  Anorthite Line for Aluminium in LV ///
+        /// Anorthite Line for Aluminium in LV ///
         REACTION_FURNACE_RECIPES.recipeBuilder("calcined_clay_in_reaction_furnace")
                 .inputItems(TagPrefix.dust, Clay, 9)
                 .inputItems(TagPrefix.dust, Limestone, 5)
