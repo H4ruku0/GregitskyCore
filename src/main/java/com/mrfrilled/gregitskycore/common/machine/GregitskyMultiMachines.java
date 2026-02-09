@@ -150,8 +150,8 @@ public class GregitskyMultiMachines {
                     .where(' ', Predicates.any())
                     .where('C',
                             Predicates.blocks(GregitskyBlocks.REINFORCED_TREATED_WOOD_CASING.get())
-                                    .setMinGlobalLimited(23)
-                                    .setPreviewCount(27)
+                                    .setMinGlobalLimited(21)
+                                    .setPreviewCount(25)
                                     .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
                                     .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1))
                                     .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(1))

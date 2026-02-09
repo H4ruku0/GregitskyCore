@@ -1,6 +1,7 @@
 package com.mrfrilled.gregitskycore.common.machine;
 
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
+import com.mrfrilled.gregitskycore.common.machine.singleblock.WeakSimpleSteamMixer;
 import com.mrfrilled.gregitskycore.gregitskycore;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -108,10 +109,10 @@ public class GregitskyMachines {
                     .workableSteamHullModel(pressure, GTCEu.id("block/machines/chemical_reactor"))
                     .register());
     public static final Pair<MachineDefinition, MachineDefinition> STEAM_MIXER = registerSteamMachines(
-            "steam_mixer", WeakSimpleSteamMachine::new, (pressure, builder) -> builder
+            "steam_mixer", WeakSimpleSteamMixer::new, (pressure, builder) -> builder
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GTRecipeTypes.MIXER_RECIPES)
-                    .recipeModifier(WeakSimpleSteamMachine::recipeModifier)
+                    .recipeModifier(WeakSimpleSteamMixer::recipeModifier)
                     .modelProperty(GTMachineModelProperties.VENT_DIRECTION, RelativeDirection.BACK)
                     .workableSteamHullModel(pressure, GTCEu.id("block/machines/mixer"))
                     .register());

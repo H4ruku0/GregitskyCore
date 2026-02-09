@@ -58,7 +58,7 @@ public class GregitskyRecipeTypes {
         /// SINGLE-BLOCK ///
 
         REACTION_FURNACE_RECIPES = register("reaction_furnace", ELECTRIC)
-                .setMaxIOSize(3, 2, 2, 3)
+                .setMaxIOSize(3, 3, 3, 3)
                 .setEUIO(IO.IN)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.CHEMICAL);
