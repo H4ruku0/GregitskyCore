@@ -26,18 +26,21 @@ public class RecipeRemovalMixin {
         // Removing with id
         // map.remove(ResourceLocation.fromNamespaceAndPath("gtceu", "compressor/iron_plate"));
 
-        // Removing multiple recipes
         String[] GregitskyRemovalRecipes = {
-                // "gtceu:macerator/cobblestone",
-                // "minecraft:golden_hoe"
+                "gtceu:electric_blast_furnace/blast_aluminium_gas",
+                "gtceu:electric_blast_furnace/blast_aluminium",
+                "gtceu:electric_blast_furnace/aluminium_from"
         };
 
-        for (String id : GregitskyRemovalRecipes) {
-            // Separa modid y path
-            String[] partes = id.split(":");
-            if (partes.length == 2) {
-                map.remove(ResourceLocation.fromNamespaceAndPath(partes[0], partes[1]));
+        map.keySet().removeIf(resourceLocation -> {
+            String fullID = resourceLocation.toString(); // Esto devuelve "modid:path"
+
+            for (String prefix : GregitskyRemovalRecipes) {
+                if (fullID.startsWith(prefix)) {
+                    return true;
+                }
             }
-        }
+            return false;
+        });
     }
 }
