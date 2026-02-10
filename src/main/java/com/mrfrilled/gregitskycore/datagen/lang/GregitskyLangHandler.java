@@ -7,9 +7,7 @@ import static com.gregtechceu.gtceu.data.lang.LangHandler.replace;
 public class GregitskyLangHandler {
 
     public static void init(RegistrateLangProvider provider) {
-        /// ///
-        /// Recipe types/ Categories ///
-        /// ///
+        /// Recipe types & Categories ///
         // replace(provider, "gtceu.", "");
         replace(provider, "gtceu.reaction_furnace", "Reaction Furnace");
         replace(provider, "gtceu.vacuum_chamber", "Vacuum Chamber");
@@ -20,16 +18,28 @@ public class GregitskyLangHandler {
         replace(provider, "gtceu.greenhouse", "Greenhouse");
         replace(provider, "gtceu.coagulation_tank", "Coagulation Tank");
 
-        /// ///
         /// Tooltip ///
-        /// ///
         // provider.add("", "");
-        replace(provider, "gregitsky.multiblock.greenhouse_tooltip0",
+        // replace(provider, "", "");
+        replace(provider, "gregitsky.machine.tooltip.hold_ctrl", "§8Hold §7[§fCtrlt§7] §8for details");
+        // ELECTRIC GREENHOUSE
+        replace(provider, "gregitsky.machine.electric.greenhouse_tooltip.0",
                 "§7This multiblock is capable of creating the perfect environment for growing plants all year round");
-        replace(provider, "gregitsky.multiblock.primitive_greenhouse_tooltip0",
+        replace(provider, "gregitsky.machine.electric.greenhouse_tooltip.1", "");
+        // PRIMITIVE GREENHOUSE
+        replace(provider, "gregitsky.machine.primitive.greenhouse_tooltip.0",
                 "§7This multiblock can create a near-perfect growing environment");
-        replace(provider, "gregitsky.multiblock.coagulation_tank_tooltip0",
+        // COAGULATION TANK
+        replace(provider, "gregitsky.machine.coagulation_tank_tooltip.0",
                 "§7The sealed objects inside will coagulate, solidifying and creating new components");
+        // STEAM ALLOY SMELTER
+        replace(provider, "gregitsky.machine.steam_alloy_smelter.tooltip.0",
+                "§7Also not to be confused with the Multi-Smelter");
+        // STEAM SEPARATOR
+        replace(provider, "gregitsky.machine.steam_separator.tooltip.0",
+                "§7Perfect for getting the most out of your dusts");
+        replace(provider, "gregitsky.machine.steam_separator.tooltip.1", "With fluid processing");
+        // STEAM FORGE HAMMER
     }
 
     protected static void multiLang(RegistrateLangProvider provider, String key, String... values) {

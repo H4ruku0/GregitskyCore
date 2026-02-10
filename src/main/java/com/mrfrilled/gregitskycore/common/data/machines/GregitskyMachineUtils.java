@@ -1,4 +1,6 @@
-package com.mrfrilled.gregitskycore.common.machine;
+package com.mrfrilled.gregitskycore.common.data.machines;
+
+import com.mrfrilled.gregitskycore.common.data.machines.singleblock.WeakSimpleSteamMachine;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;

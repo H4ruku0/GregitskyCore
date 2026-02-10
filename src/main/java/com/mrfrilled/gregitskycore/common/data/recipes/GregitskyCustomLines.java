@@ -15,7 +15,7 @@ import static com.mrfrilled.gregitskycore.common.data.materials.GregitskyMateria
 public class GregitskyCustomLines {
 
     public static void init(Consumer<FinishedRecipe> provider) {
-        AnorthiteLine(provider); // For Aluminium in LV
+        AnorthiteLine(provider); // Anorthite Line for Aluminium in LV
     }
 
     private static void AnorthiteLine(Consumer<FinishedRecipe> provider) {
@@ -45,7 +45,7 @@ public class GregitskyCustomLines {
                 .EUt(GTValues.VA[GTValues.LV])
                 .duration(20 * 8).save(provider);
         REACTION_FURNACE_RECIPES.recipeBuilder("gregitsky_anorthite_co2_precipitation")
-                .inputFluids(SodiumAluminateSolution.getFluid(1000))
+                .inputFluids(SodiumAluminateSolution.getFluid(2000))
                 .inputFluids(CarbonDioxide.getFluid(1000))
                 .inputFluids(Water.getFluid(3000))
                 .outputItems(TagPrefix.dust, SodaAsh, 1)

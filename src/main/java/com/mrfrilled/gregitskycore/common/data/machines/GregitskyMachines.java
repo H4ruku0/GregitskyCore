@@ -1,7 +1,8 @@
-package com.mrfrilled.gregitskycore.common.machine;
+package com.mrfrilled.gregitskycore.common.data.machines;
 
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
-import com.mrfrilled.gregitskycore.common.machine.singleblock.WeakSimpleSteamMixer;
+import com.mrfrilled.gregitskycore.common.data.machines.singleblock.WeakSimpleSteamMachine;
+import com.mrfrilled.gregitskycore.common.data.machines.singleblock.WeakSimpleSteamMixer;
 import com.mrfrilled.gregitskycore.gregitskycore;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -19,7 +20,7 @@ import it.unimi.dsi.fastutil.Pair;
 import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.defaultTankSizeFunction;
 import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.workableTiered;
-import static com.mrfrilled.gregitskycore.common.machine.GregitskyMachineUtils.*;
+import static com.mrfrilled.gregitskycore.common.data.machines.GregitskyMachineUtils.*;
 import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry.REGISTRATE;
 
 public class GregitskyMachines {

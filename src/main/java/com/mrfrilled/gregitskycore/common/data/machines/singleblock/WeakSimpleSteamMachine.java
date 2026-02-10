@@ -1,4 +1,4 @@
-package com.mrfrilled.gregitskycore.common.machine;
+package com.mrfrilled.gregitskycore.common.data.machines.singleblock;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.*;

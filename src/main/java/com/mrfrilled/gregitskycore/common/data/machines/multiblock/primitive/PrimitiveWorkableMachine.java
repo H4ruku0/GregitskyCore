@@ -1,4 +1,4 @@
-package com.mrfrilled.gregitskycore.common.machine.multiblock.primitive;
+package com.mrfrilled.gregitskycore.common.data.machines.multiblock.primitive;
 
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;

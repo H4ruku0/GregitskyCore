@@ -1,6 +1,6 @@
 package com.mrfrilled.gregitskycore;
 
-import com.mrfrilled.gregitskycore.common.data.GregitskyRecipes;
+import com.mrfrilled.gregitskycore.common.data.GregitskyRecipesLoader;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
 import com.mrfrilled.gregitskycore.common.data.materials.GregitskyElements;
 import com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry;
@@ -40,7 +40,7 @@ public class GregitskyCoreGTAddon implements IGTAddon {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         // CustomRecipes.init(provider);
-        GregitskyRecipes.init(provider);
+        GregitskyRecipesLoader.init(provider);
     }
 
     @Override

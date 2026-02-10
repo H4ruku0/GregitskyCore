@@ -1,4 +1,4 @@
-package com.mrfrilled.gregitskycore.common.machine.multiblock.steam;
+package com.mrfrilled.gregitskycore.common.data.machines.multiblock.steam;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
