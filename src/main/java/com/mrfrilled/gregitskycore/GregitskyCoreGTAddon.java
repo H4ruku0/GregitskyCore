@@ -1,5 +1,6 @@
 package com.mrfrilled.gregitskycore;
 
+import com.mrfrilled.gregitskycore.common.data.GregitskyCovers;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipesLoader;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
 import com.mrfrilled.gregitskycore.common.data.materials.GregitskyElements;
@@ -30,6 +31,11 @@ public class GregitskyCoreGTAddon implements IGTAddon {
     @Override
     public String addonModId() {
         return gregitskycore.MOD_ID;
+    }
+
+    @Override
+    public void registerCovers() {
+        GregitskyCovers.init();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.mrfrilled.gregitskycore;
 
-import com.mrfrilled.gregitskycore.common.data.GregitskyItems;
+import com.mrfrilled.gregitskycore.common.data.GregitskyCovers;
+import com.mrfrilled.gregitskycore.common.data.GregitskyItemLoader;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
 import com.mrfrilled.gregitskycore.common.data.machines.GregitskyMachineUtils;
@@ -9,7 +10,7 @@ import com.mrfrilled.gregitskycore.common.data.machines.GregitskyMultiMachines;
 import com.mrfrilled.gregitskycore.common.data.materials.GregitskyMaterials;
 import com.mrfrilled.gregitskycore.datagen.GregitskyDataGenerators;
 import com.mrfrilled.gregitskycore.datagen.lang.GregitskyLangHandler;
-import com.mrfrilled.gregitskycore.item.CustomItems;
+import com.mrfrilled.gregitskycore.common.data.GregitskyItems;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -59,7 +60,7 @@ public class gregitskycore {
             .register();
 
     public static void init() {
-        GregitskyItems.init();
+        GregitskyItemLoader.init();
         GregitskyBlocks.init();
     }
 
@@ -67,7 +68,9 @@ public class gregitskycore {
         GregitskyDataGenerators.init();
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        CustomItems.register(modEventBus);
+        GregitskyItems.register(modEventBus);
+
+        modEventBus.addGenericListener(com.gregtechceu.gtceu.api.cover.CoverDefinition.class, this::registerCovers);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -163,6 +166,13 @@ public class gregitskycore {
         GregitskyMachines.init();
         GregitskyMachineUtils.init();
         GregitskyMultiMachines.init();
+    }
+
+    /**
+     * Registro de Covers personalizado
+     */
+    private void registerCovers(GTCEuAPI.RegisterEvent<ResourceLocation, com.gregtechceu.gtceu.api.cover.CoverDefinition> event) {
+        GregitskyCovers.init();
     }
 
     /**

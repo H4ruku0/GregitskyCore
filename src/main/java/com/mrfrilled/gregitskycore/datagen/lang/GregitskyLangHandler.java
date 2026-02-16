@@ -40,6 +40,11 @@ public class GregitskyLangHandler {
                 "§7Perfect for getting the most out of your dusts");
         replace(provider, "gregitsky.machine.steam_separator.tooltip.1", "With fluid processing");
         // STEAM FORGE HAMMER
+        // COVER INFINITE COBBLESTONE
+        replace(provider, "gregitsky.machine.infinite_cobblestone_cover.tooltip.1", "§7Fills attached containers with§r Cobblestone §7as§r Cover");
+        // ITEM PRODUCTION "DARK AQUA"
+        replace(provider, "gregitsky.machine.item_production.tooltip.1", "§3Produces: §f%d item/t");
+
     }
 
     protected static void multiLang(RegistrateLangProvider provider, String key, String... values) {
