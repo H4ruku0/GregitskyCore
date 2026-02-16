@@ -55,8 +55,8 @@ public class InfiniteCobblestoneCover extends CoverBehavior {
             if (be != null) {
                 be.getCapability(ForgeCapabilities.ITEM_HANDLER, attachedSide)
                         .ifPresent(handler -> {
-                            // Creamos 64 de Cobblestone
-                            ItemStack cobbleStack = new ItemStack(Items.COBBLESTONE, 20);
+                            // Creamos 4 de Cobblestone
+                            ItemStack cobbleStack = new ItemStack(Items.COBBLESTONE, 4);
                             // Insertamos en el inventario encontrado
                             ItemHandlerHelper.insertItemStacked(handler, cobbleStack, false);
                         });

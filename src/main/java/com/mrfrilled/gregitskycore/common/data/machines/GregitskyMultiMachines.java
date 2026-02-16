@@ -43,9 +43,7 @@ public class GregitskyMultiMachines {
             .tooltips(Component.translatable("gregitsky.machine.electric.greenhouse_tooltip.0"))
             .tooltipBuilder((stack, tooltip) -> {
                 if (GTUtil.isCtrlDown()) {
-                    tooltip.add(Component.empty());
                     tooltip.add(Component.translatable("gregitsky.machine.electric.greenhouse_tooltip.1"));
-                    tooltip.add(Component.empty());
                 } else {
                     tooltip.add(Component.translatable("gregitsky.machine.tooltip.hold_ctrl"));
                 }
@@ -152,9 +150,7 @@ public class GregitskyMultiMachines {
             .tooltips(Component.translatable("gregitsky.machine.steam_separator.tooltip.0"))
             .tooltipBuilder((stack, tooltip) -> {
                 if (GTUtil.isCtrlDown()) {
-                    tooltip.add(Component.empty());
                     tooltip.add(Component.translatable("gregitsky.machine.steam_separator.tooltip.1"));
-                    tooltip.add(Component.empty());
                 } else {
                     tooltip.add(Component.translatable("gregitsky.machine.tooltip.hold_ctrl"));
                 }

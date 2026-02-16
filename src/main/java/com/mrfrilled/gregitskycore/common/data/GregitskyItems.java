@@ -1,6 +1,5 @@
 package com.mrfrilled.gregitskycore.common.data;
 
-import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.item.ComponentItem;
 import com.gregtechceu.gtceu.common.item.CoverPlaceBehavior;
 import com.gregtechceu.gtceu.common.item.TooltipBehavior;
@@ -13,9 +12,11 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static com.gregtechceu.gtceu.common.data.GTItems.attach;
+import javax.annotation.ParametersAreNonnullByDefault;
+
 import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry.REGISTRATE;
 
+@ParametersAreNonnullByDefault
 public class GregitskyItems {
 
     static {
@@ -40,7 +41,7 @@ public class GregitskyItems {
                 item.attachComponents(
                         new TooltipBehavior(lines -> {
                             lines.add(Component.translatable("gregitsky.machine.infinite_cobblestone_cover.tooltip.1"));
-                            lines.add(Component.translatable("gregitsky.machine.item_production.tooltip.1", 1));
+                            lines.add(Component.translatable("gregitsky.machine.item_production.tooltip.1", 4));
                         }),
                         new CoverPlaceBehavior(GregitskyCovers.INFINITE_COBBLESTONE)
                 );

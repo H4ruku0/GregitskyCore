@@ -1,18 +1,14 @@
 package com.mrfrilled.gregitskycore.common.data;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.client.renderer.cover.ICoverRenderer;
 import com.gregtechceu.gtceu.client.renderer.cover.SimpleCoverRenderer;
 import com.mrfrilled.gregitskycore.common.cover.InfiniteCobblestoneCover;
 import com.mrfrilled.gregitskycore.gregitskycore;
-import it.unimi.dsi.fastutil.ints.Int2ObjectFunction;
 import net.minecraft.resources.ResourceLocation;
 
-import java.util.Arrays;
-import java.util.Locale;
 import java.util.function.Supplier;
 
 public class GregitskyCovers {
@@ -41,8 +37,7 @@ public class GregitskyCovers {
 
     public static void init() {
         if (INFINITE_COBBLESTONE == null) {
-            // Solo definimos el objeto, GregTech ya se encargó de hacer unfreeze()
-            INFINITE_COBBLESTONE = register("infinite_cobblestone", InfiniteCobblestoneCover::new);
+            INFINITE_COBBLESTONE = register("infinite_cobblestone_cover", InfiniteCobblestoneCover::new);
         }
     }
 }

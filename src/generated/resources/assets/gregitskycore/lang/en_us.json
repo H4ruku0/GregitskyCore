@@ -53,7 +53,7 @@
   "gregitsky.machine.electric.greenhouse_tooltip.0": "§7This multiblock is capable of creating the perfect environment for growing plants all year round",
   "gregitsky.machine.electric.greenhouse_tooltip.1": "",
   "gregitsky.machine.infinite_cobblestone_cover.tooltip.1": "§7Fills attached containers with§r Cobblestone §7as§r Cover",
-  "gregitsky.machine.item_production.tooltip.1": "§3Produces: §f%d items/t",
+  "gregitsky.machine.item_production.tooltip.1": "§3Produces: §f%d items/sec",
   "gregitsky.machine.primitive.greenhouse_tooltip.0": "§7This multiblock can create a near-perfect growing environment",
   "gregitsky.machine.steam_alloy_smelter.tooltip.0": "§7Also not to be confused with the Multi-Smelter",
   "gregitsky.machine.steam_separator.tooltip.0": "§7Perfect for getting the most out of your dusts",

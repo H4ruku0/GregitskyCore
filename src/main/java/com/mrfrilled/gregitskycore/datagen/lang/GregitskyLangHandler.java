@@ -43,7 +43,7 @@ public class GregitskyLangHandler {
         // COVER INFINITE COBBLESTONE
         replace(provider, "gregitsky.machine.infinite_cobblestone_cover.tooltip.1", "§7Fills attached containers with§r Cobblestone §7as§r Cover");
         // ITEM PRODUCTION "DARK AQUA"
-        replace(provider, "gregitsky.machine.item_production.tooltip.1", "§3Produces: §f%d item/t");
+        replace(provider, "gregitsky.machine.item_production.tooltip.1", "§3Produces: §f%d items/sec");
 
     }
 
