@@ -1,4 +1,4 @@
-package com.mrfrilled.gregitskycore.common.data;
+package com.mrfrilled.gregitskycore.common.data.item;
 
 import static com.mrfrilled.gregitskycore.common.registry.GregitskyRegistry.REGISTRATE;
 import static com.mrfrilled.gregitskycore.gregitskycore.GREGITSKY_CREATIVE_TAB;

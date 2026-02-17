@@ -23,7 +23,6 @@ import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 public class GregitskyRecipeTypes {
 
     public static GTRecipeType GREENHOUSE_RECIPES;
-    // public static GTRecipeType ANTIPROTONIC_RECIPES;
     public static GTRecipeType PRIMITIVE_ORE_MINER;
     public static GTRecipeType REACTION_FURNACE_RECIPES;
     public static GTRecipeType VULCANIZER_RECIPES;
@@ -35,11 +34,6 @@ public class GregitskyRecipeTypes {
     public static void init() {
         /// MULTIBLOCK ///
 
-        // ANTIPROTONIC_RECIPES = register("antiprotonic", MULTIBLOCK)
-        // .setMaxIOSize(3, 3, 1, 1)
-        // .setEUIO(IO.IN)
-        // .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-        // .setSound(GTSoundEntries.COOLING);
         GREENHOUSE_RECIPES = register("greenhouse", MULTIBLOCK)
                 .setMaxIOSize(4, 6, 2, 2)
                 .setEUIO(IO.IN)

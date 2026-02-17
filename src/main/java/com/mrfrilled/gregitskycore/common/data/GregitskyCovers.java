@@ -1,12 +1,14 @@
 package com.mrfrilled.gregitskycore.common.data;
 
+import com.mrfrilled.gregitskycore.common.cover.InfiniteCobblestoneCover;
+import com.mrfrilled.gregitskycore.gregitskycore;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.client.renderer.cover.ICoverRenderer;
 import com.gregtechceu.gtceu.client.renderer.cover.SimpleCoverRenderer;
-import com.mrfrilled.gregitskycore.common.cover.InfiniteCobblestoneCover;
-import com.mrfrilled.gregitskycore.gregitskycore;
+
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.function.Supplier;
@@ -20,7 +22,8 @@ public class GregitskyCovers {
     ///////////////////////////////////////////////
 
     private static CoverDefinition register(String id, CoverDefinition.CoverBehaviourProvider behaviorCreator) {
-        return register(id, behaviorCreator, () -> () -> new SimpleCoverRenderer(gregitskycore.id("block/cover/" + id)));
+        return register(id, behaviorCreator,
+                () -> () -> new SimpleCoverRenderer(gregitskycore.id("block/cover/" + id)));
     }
 
     private static CoverDefinition register(String id, CoverDefinition.CoverBehaviourProvider behaviorCreator,

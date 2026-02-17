@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
-import static com.mrfrilled.gregitskycore.common.data.GregitskyItems.*;
+import static com.mrfrilled.gregitskycore.common.data.item.GregitskyItems.*;
 import static com.mrfrilled.gregitskycore.common.data.machines.GregitskyMultiMachines.*;
 
 public class MiscRecipeLoader {
@@ -95,9 +95,7 @@ public class MiscRecipeLoader {
                 .inputItems(GTMachines.SUPER_CHEST[GTValues.LV])
                 .inputItems(CustomTags.HV_CIRCUITS, 6)
                 .outputItems(COVER_INFINITE_COBBLESTONE)
-                .duration(20*20)
-                .EUt(GTValues.VA[GTValues.HV*2]).save(provider);
-
-
+                .duration(20 * 20)
+                .EUt(GTValues.VA[GTValues.HV * 2]).save(provider);
     }
 }

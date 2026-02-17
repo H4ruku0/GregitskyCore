@@ -41,10 +41,10 @@ public class GregitskyLangHandler {
         replace(provider, "gregitsky.machine.steam_separator.tooltip.1", "With fluid processing");
         // STEAM FORGE HAMMER
         // COVER INFINITE COBBLESTONE
-        replace(provider, "gregitsky.machine.infinite_cobblestone_cover.tooltip.1", "§7Fills attached containers with§r Cobblestone §7as§r Cover");
+        replace(provider, "gregitsky.machine.infinite_cobblestone_cover.tooltip.1",
+                "§7Fills attached containers with§r Cobblestone §7as§r Cover");
         // ITEM PRODUCTION "DARK AQUA"
         replace(provider, "gregitsky.machine.item_production.tooltip.1", "§3Produces: §f%d items/sec");
-
     }
 
     protected static void multiLang(RegistrateLangProvider provider, String key, String... values) {

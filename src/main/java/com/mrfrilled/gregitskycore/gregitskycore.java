@@ -1,7 +1,8 @@
 package com.mrfrilled.gregitskycore;
 
 import com.mrfrilled.gregitskycore.common.data.GregitskyCovers;
-import com.mrfrilled.gregitskycore.common.data.GregitskyItemLoader;
+import com.mrfrilled.gregitskycore.common.data.item.GregitskyItemLoader;
+import com.mrfrilled.gregitskycore.common.data.item.GregitskyItems;
 import com.mrfrilled.gregitskycore.common.data.GregitskyRecipeTypes;
 import com.mrfrilled.gregitskycore.common.data.block.GregitskyBlocks;
 import com.mrfrilled.gregitskycore.common.data.machines.GregitskyMachineUtils;
@@ -10,7 +11,6 @@ import com.mrfrilled.gregitskycore.common.data.machines.GregitskyMultiMachines;
 import com.mrfrilled.gregitskycore.common.data.materials.GregitskyMaterials;
 import com.mrfrilled.gregitskycore.datagen.GregitskyDataGenerators;
 import com.mrfrilled.gregitskycore.datagen.lang.GregitskyLangHandler;
-import com.mrfrilled.gregitskycore.common.data.GregitskyItems;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;

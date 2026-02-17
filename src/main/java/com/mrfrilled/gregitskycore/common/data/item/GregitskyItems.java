@@ -1,16 +1,19 @@
-package com.mrfrilled.gregitskycore.common.data;
+package com.mrfrilled.gregitskycore.common.data.item;
+
+import com.mrfrilled.gregitskycore.common.data.GregitskyCovers;
+import com.mrfrilled.gregitskycore.gregitskycore;
 
 import com.gregtechceu.gtceu.api.item.ComponentItem;
 import com.gregtechceu.gtceu.common.item.CoverPlaceBehavior;
 import com.gregtechceu.gtceu.common.item.TooltipBehavior;
-import com.mrfrilled.gregitskycore.gregitskycore;
 
-import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.tterrag.registrate.util.entry.ItemEntry;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -43,9 +46,11 @@ public class GregitskyItems {
                             lines.add(Component.translatable("gregitsky.machine.infinite_cobblestone_cover.tooltip.1"));
                             lines.add(Component.translatable("gregitsky.machine.item_production.tooltip.1", 4));
                         }),
-                        new CoverPlaceBehavior(GregitskyCovers.INFINITE_COBBLESTONE)
-                );
+                        new CoverPlaceBehavior(GregitskyCovers.INFINITE_COBBLESTONE));
             })
             .register();
-
+    public static final ItemEntry<MolecularCompoundItem> MOLECULAR_COMPOUND = REGISTRATE
+            .item("molecular_compound", MolecularCompoundItem::new)
+            .lang("Molecular Compound")
+            .register();
 }
